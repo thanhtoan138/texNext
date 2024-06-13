@@ -1,0 +1,356 @@
+.main1 {
+
+    .main-header {
+        width: 900px;
+        text-align: center;
+        position: relative;
+        margin-left: 200px;
+        bottom: 152px;
+        border-radius: 10px;
+        height: 120px;
+        background-color: #cecbcb;
+        box-shadow: 1px 2px 2px 1px #cccecd;
+
+        .straign {
+            border-left: 1px solid rgb(177, 174, 174);
+            height: 65px;
+            margin-top: 25px;
+        }
+    }
+
+    .main-body {
+
+        .mySwiper1 {
+            border-radius: 10px;
+
+            img {
+                border-radius: 10px;
+            }
+        }
+    }
+
+    .main-car {
+        background-color: #f6f6f6;
+        margin-bottom: 20px;
+
+        .card-e {
+            font-size: 14px;
+
+
+            img {
+                border-radius: 10px;
+            }
+        }
+    }
+
+    .checkin {
+        margin-top: 60px;
+
+        .mySwiper2 {
+
+            .slide-c {
+                position: relative;
+                bottom: 80px;
+                left: 20px;
+                color: white;
+                font-weight: 500;
+            }
+
+            img {
+                opacity: 1;
+                -webkit-transition: .3s ease-in-out;
+                transition: .3s ease-in-out;
+            }
+
+            :hover {
+                opacity: .8;
+            }
+
+        }
+    }
+
+    .swiper-custom {
+        .swiper-container {
+            .custom-pre {
+
+                .swiper-button-next {
+                    background-color: #f6f6f6;
+                    color: rgb(83, 81, 81);
+                    border-radius: 100%;
+                    border: 1px solid #a2a29e;
+                    width: 50px;
+                    height: 50px;
+                    top: 23px;
+                    left: 100px;
+                    --swiper-navigation-size: 20px;
+                    position: relative;
+
+
+                }
+
+                .swiper-button-prev {
+                    background-color: #f6f6f6;
+                    --swiper-navigation-size: 20px;
+                    color: rgb(83, 81, 81);
+                    border-radius: 100%;
+                    border: 1px solid #a2a29e;
+                    width: 50px;
+                    height: 50px;
+                    top: -17px;
+                    left: 35px;
+                    position: relative;
+                }
+            }
+        }
+
+        .mySwiper3 {
+            .swi {
+                background-color: #f6f6f6;
+                height: 160px;
+                border-radius: 40px;
+
+                img {
+                    border-radius: 100%;
+                    margin-left: 83px;
+                    margin-top: 10px;
+                }
+            }
+
+        }
+    }
+
+    .priority {
+
+        .title {
+            margin-top: 40px;
+            text-align: center;
+        }
+    }
+
+    .joyney {
+        background-color: #f6f6f6;
+        margin-top: 40px;
+
+        .row-img img {
+            margin-top: 40px;
+            background-color: #f6f6f6;
+            margin-bottom: 80px;
+            box-shadow: 1px 1px 1px 1px rgb(162, 160, 160);
+            border-radius: 20px;
+        }
+
+    }
+
+    .service {
+
+        .ser1 {
+            .content {
+                position: relative;
+                bottom: 280px;
+                left: 40px;
+                color: rgb(244, 246, 247);
+
+                .tilte {
+                    font-weight: 600;
+                    font-size: 40px;
+                }
+
+                .btn {
+                    background-color: #5fcf86;
+                    color: white;
+                    font-weight: 500;
+                    font-size: 25px;
+                    width: 230px;
+                }
+            }
+
+        }
+
+        .ser2 {
+
+            img {
+                margin-top: 50px;
+                position: relative;
+                right: 60px;
+            }
+
+            .content {
+                position: relative;
+                bottom: 220px;
+                left: 190px;
+                color: rgb(244, 246, 247);
+
+                .tilte {
+                    font-weight: 600;
+                    font-size: 40px;
+                }
+
+                .btn {
+                    background-color: #5fcf86;
+                    color: white;
+                    font-weight: 500;
+                    font-size: 25px;
+                    width: 230px;
+                    margin-left: 170px;
+                }
+            }
+        }
+    }
+
+    .instruct {
+
+        .tilte {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 60px;
+        }
+
+        .title-p {
+            font-size: 24px;
+            font-weight: 600;
+
+        }
+
+        .more {
+            background-color: #d9e5dd;
+            height: 500px;
+            border-radius: 20px;
+            margin-top: 80px;
+
+            .btn {
+                background-color: #5fcf86;
+                color: white;
+                font-weight: 500;
+                font-size: 25px;
+                width: 230px;
+            }
+
+            .more1 {
+                margin-top: 17px;
+                padding-left: 29px;
+            }
+
+            .more2 {
+                margin-top: 120px;
+
+                img {
+                    margin-bottom: 40px;
+                    margin-left: 150px;
+                }
+            }
+        }
+    }
+
+    .instruct2 {
+        margin-top: 100px;
+
+        .more {
+            background-color: #ebf5f5;
+            height: 500px;
+            border-radius: 20px;
+            margin-top: 80px;
+        }
+
+        .more2 {
+            padding-top: 80px;
+            padding-left: 150px;
+
+            .btn {
+                background-color: #5cb3ff;
+                color: white;
+                font-weight: 500;
+                font-size: 22px;
+                width: 200px;
+                margin-top: 50px;
+                box-shadow: 2px 2px 2px 1px #cccdce;
+                ;
+            }
+
+            img {
+                margin-left: 120px;
+                margin-bottom: 40px;
+            }
+        }
+
+        .more1 {
+            padding-left: 80px;
+            padding-top: 17px;
+        }
+    }
+
+    .instruct3 {
+        margin-top: 100px;
+
+        .more {
+            background-color: #f3f2f2;
+            height: 600px;
+            border-radius: 20px;
+            margin-top: 80px;
+        }
+
+        .more2 {
+            text-align: center;
+            margin-top: 140px;
+
+            .icon {
+                font-size: 60px;
+                color: #5fcf86;
+
+            }
+
+            img {
+                margin-left: 14px;
+            }
+        }
+    }
+
+    .blog {
+        margin-bottom: -160px;
+        margin-top: 80px;
+
+        img {
+            border-radius: 40px;
+            opacity: 1;
+            -webkit-transition: .3s ease-in-out;
+            transition: .3s ease-in-out;
+        }
+
+        :hover {
+            opacity: .8;
+        }
+
+        .cental1 {
+
+            .content {
+                position: relative;
+                bottom: 120px;
+                color: white;
+                left: 20px;
+            }
+        }
+
+        .cental2 {
+            position: relative;
+            bottom: 92px;
+
+            .content {
+                position: relative;
+                bottom: 120px;
+                color: white;
+                left: 20px;
+            }
+        }
+
+        .cental3 {
+
+            .content {
+                position: relative;
+                bottom: 140px;
+                color: white;
+                left: 20px;
+            }
+        }
+    }
+
+}

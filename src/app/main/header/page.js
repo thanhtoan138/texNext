@@ -3,15 +3,14 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import { useState } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
-import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-// import React, { Component } from 'react';
 import '../../../scss/header.scss';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
-// import { Link } from "react-router-dom";
+
 
 const Header = () => {
+
 
     const [show, setShow] = useState(false);
     const [showRegister, setShowRegister] = useState(false);
@@ -19,9 +18,9 @@ const Header = () => {
     const handleCloseRegister = () => setShowRegister(false);
     const handleShow = () => setShow(true);
     const handleShowRegister = () => setShowRegister(true);
-    const pathname = usePathname()
-    return (
 
+
+    return (
         <div className='header w-100'>
             <Navbar className="bg-body-tertiary">
                 <Container>
@@ -59,36 +58,33 @@ const Header = () => {
                         <p className='three'>Trải nghiệm sự khác biệt từ <span>hơn 8000</span> xe gia đình đời mới khắp Việt Nam</p>
                     </div>
                     <div className='nav-pill'>
-                        <Nav variant="pills" defaultActiveKey="/main3">
-                            <Nav.Item className='nav-pill-c' style={{ borderRadius: '10px 0px 0px 0px' }}>
-                                <Nav.Link eventKey="link-1" style={{ borderRadius: "0" }}>
-                                    <Link href='/main3' scroll={false} style={{ textDecoration: 'none', color: 'white' }}>
-                                        <i class="bi bi-bus-front-fill"></i>
-                                        &nbsp;Xe tự lái
-                                    </Link>
+                        <Nav variant="pills">
 
-                                </Nav.Link>
+                            <Nav.Item className='nav-pill-c' style={{ borderRadius: '10px 0px 0px 0px' }}>
+                                <Link className="nav-link" href='/main-child1' style={{ textDecoration: 'none', color: 'white' }}>
+                                    <i className="bi bi-car-front-fill"></i>&nbsp;Xe tự lái
+                                </Link>
+
                             </Nav.Item>
                             <Nav.Item className='nav-pill-c'>
-                                <Nav.Link eventKey="link-2" style={{ borderRadius: "0" }}>
-                                    <Link href='/main2' scroll={false} style={{ textDecoration: 'none', color: 'white' }}>
-                                        <i class="bi bi-bus-front-fill"></i>
-                                        &nbsp;Xe có tài xế
-                                    </Link>
 
-                                </Nav.Link>
+                                <Link className='nav-link' href='/dad/details' style={{ textDecoration: 'none', color: 'white' }}>
+                                    <i className="bi bi-bus-front-fill"></i>
+                                    &nbsp;Xe có tài xế
+                                </Link>
+
                             </Nav.Item>
                             <Nav.Item className='nav-pill-c' style={{ borderRadius: '0px 10px 0px 0px' }}>
-                                <Nav.Link eventKey="link-3" style={{ borderRadius: "0" }}>
-                                    <Link href='/main2' scroll={false} style={{ textDecoration: 'none', color: 'white' }}>
-                                        <i class="bi bi-calendar-date"></i>
-                                        &nbsp;Thuê xe dài hạn
-                                    </Link>
 
-                                </Nav.Link>
+                                <Link className='nav-link' href='/main-child3' style={{ textDecoration: 'none', color: 'white' }} >
+                                    <i className="bi bi-bus-front-fill"></i>
+                                    &nbsp;Thuê xe dài hạn
+                                </Link>
+
                             </Nav.Item>
-                            &nbsp;
+
                         </Nav>
+
                     </div>
                 </div>
             </Container>
@@ -125,15 +121,15 @@ const Header = () => {
                             aria-describedby="passwordHelpBlock"
 
                         />
-                        <i class="bi bi-eye-slash" style={{ position: 'relative', bottom: '30px', left: '437px' }}></i>
+                        <i className="bi bi-eye-slash" style={{ position: 'relative', bottom: '30px', left: '437px' }}></i>
 
                         <p style={{ marginLeft: '330px', marginTop: '10px', color: 'rgb(95, 207, 134)' }}>Quên mật khẩu?</p>
                         <a className='dn btn '>Đăng nhập</a>
                         <p style={{ textAlign: 'center', paddingTop: '10px' }}>Bạn chưa là thành viên? <span style={{ color: 'rgb(95, 207, 134)', fontWeight: "500" }}>Đăng ký ngay</span></p>
-                        <p className='equal'>
+                        <div className='equal'>
                             <a className='fb btn'><img src='https://nhanhtravel.com/wp-content/uploads/2022/12/TS-FB-Icon1-e1670787566310.png' width={18} /> Facebook</a>
                             <a className='gg btn'><img src='https://cdn.pixabay.com/photo/2021/05/24/09/15/google-logo-6278331_960_720.png' width={18} /> Google</a>
-                        </p>
+                        </div>
 
                     </div>
                 </Modal.Body>
@@ -208,13 +204,13 @@ const Header = () => {
                                 và <span style={{ fontWeight: '500', color: '#5fcf86' }}>Chính sách bảo vệ dữ liệu cá nhân</span> của Mioto
                             </p>
                         </Form>
-                        <i class="a bi bi-eye-slash" style={{ position: 'relative', bottom: '175px', left: '437px' }}></i>
-                        <i class="b bi bi-eye-slash" style={{ position: 'relative', bottom: '105px', left: '422px' }}></i>
+                        <i className="a bi bi-eye-slash" style={{ position: 'relative', bottom: '175px', left: '437px' }}></i>
+                        <i className="b bi bi-eye-slash" style={{ position: 'relative', bottom: '105px', left: '422px' }}></i>
                         <a className='dk btn'>Đăng ký</a>
-                        <p className='equal'>
+                        <div className='equal'>
                             <a className='fb btn'><img src='https://nhanhtravel.com/wp-content/uploads/2022/12/TS-FB-Icon1-e1670787566310.png' width={18} /> Facebook</a>
                             <a className='gg btn'><img src='https://cdn.pixabay.com/photo/2021/05/24/09/15/google-logo-6278331_960_720.png' width={18} /> Google</a>
-                        </p>
+                        </div>
 
                     </div>
                 </Modal.Body>

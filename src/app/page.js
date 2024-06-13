@@ -1,9 +1,6 @@
-
 const Main = () => {
     return (
         <>
-
-            <h1>Main nef</h1>
 
         </>
     )

@@ -1,3 +1,4 @@
+
 import Container from 'react-bootstrap/Container';
 import '../../../scss/footer.scss';
 import { Row, Col } from 'react-bootstrap';
@@ -15,9 +16,13 @@ const Footer = () => {
                         <p>Tổng đài hỗ trợ: 7AM - 10PM</p>
                         <p>contact@mioto.vn</p>
                         <p>Gửi mail cho Mioto</p>
-                        <span style={{ marginRight: '5px' }}><img src='https://nhanhtravel.com/wp-content/uploads/2022/12/TS-FB-Icon1-e1670787566310.png' width={40} height={40} /></span>
-                        <span style={{ marginRight: '5px' }}><img src='https://vigolf.vn/assets/image/menu_left/Artboard-1.png' width={40} height={40} /></span>
-                        <span><img src='https://vigolf.vn/assets/image/menu_left/iconzalo.png' width={40} height={40} /></span>
+                        <div style={{ marginRight: '5px' }}>
+                            <img src='https://nhanhtravel.com/wp-content/uploads/2022/12/TS-FB-Icon1-e1670787566310.png' width={40} height={40} />
+
+                            <img src='https://vigolf.vn/assets/image/menu_left/Artboard-1.png' width={40} height={40} />
+
+                            <img src='https://vigolf.vn/assets/image/menu_left/iconzalo.png' width={40} height={40} />
+                        </div>
                     </Col>
                     <Col lg={2}>
                         <p className='title'>Chính Sách</p>
@@ -76,11 +81,11 @@ const Footer = () => {
             <Container>
                 <Row>
                     <Col lg={3}>
-                        <img src='https://www.mioto.vn/static/media/bocongthuong.40599f29.png' alt='' width={280}></img>
+                        <img src='https://www.mioto.vn/static/media/bocongthuong.40599f29.png' alt='' width={280} />
                     </Col>
-                    <Col lg={3}><p style={{}}>Phương thức thanh toán</p></Col>
+                    <Col lg={3}><p>Phương thức thanh toán</p></Col>
                     <Col lg={1}><img src='https://www.mioto.vn/static/media/vnpay.780689d6.png' alt='' width={60} /></Col>
-                    <Col lg={1}><img src='https://www.mioto.vn/static/media/alepay.bb769e5d.png' alt='' width={80}></img></Col>
+                    <Col lg={1}><img src='https://www.mioto.vn/static/media/alepay.bb769e5d.png' alt='' width={80} /></Col>
                     <Col lg={1}><img src='data:image/png;base64,iVBORw0KG
                 goAAAANSUhEUgAAALgAAAC5CAYAAACbb/ViAAAACXBIWXMAACxLAAAsSw
                 GlPZapAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAB52SURBVHgB7Z0HnBXV9cd/M6/s
