@@ -17,10 +17,8 @@
                     margin-top: 10px;
 
                     i {
-                        background-color: #f6f6f6;
-                        color: rgb(83, 81, 81);
                         border-radius: 100%;
-                        border: 1px solid #a2a29e;
+                        border: 1px solid #c3c0c0;
                         padding-left: 17px;
                         padding-right: 17px;
                         padding-top: 10px;
@@ -44,14 +42,57 @@
                 }
             }
         }
-
-        .ford {
-            margin-top: 40px;
-
-            img {
-                border-radius: 30px;
-                padding: 5px;
+        .facilities{
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            gap: 10px;
+          
+            li{
+                list-style-type: none;
             }
         }
+
+        .time{
+            margin-top: 10px;
+            background-color: #fef7f4;
+            height: 150px;
+            padding-left: 20px;
+            padding-top: 20px;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 10px;
+            border-left: 8px solid #f26a2b;
+        }
+        .text{
+            background-color: #fef7f4;
+            height: 50px;
+            padding-left: 10px;
+            padding-top: 10px;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 10px;
+            border-left: 8px solid #f26a2b;
+            margin-top: 20px;
+        }
+
+
+    }
+    .ford {
+        margin-top: 40px;
+
+        img {
+            border-radius: 30px;
+            padding: 5px;
+        }
+        .insurance{
+            margin-top: 10px;
+            border: 1px solid gray ;
+            border-radius: 10px;
+          
+        }
+        
+    }
+    .payment{
+        background-color: #841717;
     }
 }

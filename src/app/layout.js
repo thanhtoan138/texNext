@@ -1,8 +1,10 @@
 import { Inter } from "next/font/google";
 import Footer from "./main/footer/page";
 import Header from "./main/header/page";
-import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap-icons/font/bootstrap-icons.css";
+
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
