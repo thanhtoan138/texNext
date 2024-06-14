@@ -8,6 +8,7 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Card from 'react-bootstrap/Card';
+import { Nav } from 'react-bootstrap';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -19,13 +20,8 @@ import { usePathname } from 'next/navigation';
 import Link from "next/link";
 import { useRouter } from 'next/navigation';
 const MainChild1 = () => {
-    // const pathname = usePathname();
     const router = useRouter();
-    // const fetcher = (...arg) => fetcher(...arg).then((res) => res.json)
-    // const { product, error } = useSWR('http://localhost:8000/products', fetcher);
 
-    // if (error) return <div>Failed to load</div>
-    // if (!product) return <div>Loading...</div>
     const [data, setData] = useState(null)
     const [isLoading, setLoading] = useState(true)
 
@@ -46,6 +42,47 @@ const MainChild1 = () => {
     return (
 
         <div className='main1 w-100'>
+            <Container>
+                <div className='nav-head'>
+                    <div className='img-bg w-100 mt-3'>
+                        <img src='https://www.mioto.vn/static/media/bg-landingpage-1.34e13e49.png' alt='' width={1300} height={600} />
+                    </div>
+                    <div className='title'>
+                        <p className='first'>Mioto - Cùng Bạn<br /> Đến Mọi Hành Trình</p>
+                        <hr className='second' noshade="noshade" />
+                        <p className='three'>Trải nghiệm sự khác biệt từ <span>hơn 8000</span> xe gia đình đời mới khắp Việt Nam</p>
+                    </div>
+                    <div className='nav-pill'>
+                        <Nav variant="pills">
+
+                            <Nav.Item className='nav-pill-c' style={{ borderRadius: '10px 0px 0px 0px' }}>
+                                <Link className="nav-link" href='/' style={{ textDecoration: 'none', color: 'white' }}>
+                                    <i className="bi bi-car-front-fill"></i>&nbsp;Xe tự lái
+                                </Link>
+
+                            </Nav.Item>
+                            <Nav.Item className='nav-pill-c'>
+
+                                <Link className='nav-link' href='/main-child2' style={{ textDecoration: 'none', color: 'white' }}>
+                                    <i className="bi bi-bus-front-fill"></i>
+                                    &nbsp;Xe có tài xế
+                                </Link>
+
+                            </Nav.Item>
+                            <Nav.Item className='nav-pill-c' style={{ borderRadius: '0px 10px 0px 0px' }}>
+
+                                <Link className='nav-link' href='/main-child3' style={{ textDecoration: 'none', color: 'white' }} >
+                                    <i className="bi bi-bus-front-fill"></i>
+                                    &nbsp;Thuê xe dài hạn
+                                </Link>
+
+                            </Nav.Item>
+
+                        </Nav>
+
+                    </div>
+                </div>
+            </Container>
             <Container>
                 <div className='main-header bg-light'>
                     <Row>
@@ -146,7 +183,7 @@ const MainChild1 = () => {
                                                 </Col>
                                                 <Col md={1}></Col>
                                             </Row>
-                                            <p style={{ fontSize: '22px', fontWeight: '600', marginTop: '10px', textAlign: 'center' }} >
+                                            <p style={{ fontSize: '22px', fontWeight: '600', marginTop: '10px', textAlign: 'center' }}>
 
                                                 {item.name}
 
@@ -165,105 +202,7 @@ const MainChild1 = () => {
                                 </Col>
                             )
                         })}
-                        {/* <Col>
-                            <Card style={{ width: '19rem', marginBottom: '20px', height: '29rem' }}>
-                                <Card.Body>
 
-                                    <Card.Subtitle className="mb-2 text-muted ">
-                                        <img src='https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_t…2022/p/g/2023/07/08/09/o3HW3TlvyfqdqsY_54tB1A.jpg' width={270} height={240} />
-                                    </Card.Subtitle>
-
-                                    <Row className='mt-3'>
-                                        <Col md={5} style={{ backgroundColor: '#eef7ff', borderRadius: '10px', height: '30px', textAlign: 'center' }}>
-                                            <p>Số tự động</p>
-                                        </Col>
-                                        &nbsp;
-                                        <Col md={6} style={{ backgroundColor: '#dff5e7', borderRadius: '10px', height: '30px', textAlign: 'center' }}>
-                                            <p>Giao xe tận nơi</p>
-                                        </Col>
-                                        <Col md={1}></Col>
-                                    </Row>
-
-
-                                    <p style={{ fontSize: '22px', fontWeight: '600', marginTop: '10px' }}>KIA K3 PREMEUM 2022</p>
-                                    <p><i className="bi bi-geo-alt"></i> &nbsp;Quận Bình Thạnh, TP.Hồ Chí Minh</p>
-
-                                    <hr />
-                                    <div>
-                                        <i className="bi bi-star-fill" style={{ display: 'inline-block', color: 'orange' }}></i> 5.0&nbsp;&nbsp;
-                                        <i className="bi bi-suitcase-fill" style={{ display: 'inline-block', color: '#5fcf86' }}></i>39 chuyến
-                                        <del style={{ marginLeft: '10px', fontWeight: '500', color: 'gray' }}>530k</del>
-                                        <span style={{ color: '#5fcf86', fontWeight: '500', fontSize: '22px', marginLeft: '3px' }}>979K</span>/ngày
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col>
-                            <Card style={{ width: '19rem', marginBottom: '20px', height: '29rem' }}>
-                                <Card.Body>
-
-                                    <Card.Subtitle className="mb-2 text-muted ">
-                                        <img src='https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_t…2022/p/g/2023/07/08/09/o3HW3TlvyfqdqsY_54tB1A.jpg' width={270} height={240} />
-                                    </Card.Subtitle>
-
-                                    <Row className='mt-3'>
-                                        <Col md={5} style={{ backgroundColor: '#eef7ff', borderRadius: '10px', height: '30px', textAlign: 'center' }}>
-                                            <p>Số tự động</p>
-                                        </Col>
-                                        &nbsp;
-                                        <Col md={6} style={{ backgroundColor: '#dff5e7', borderRadius: '10px', height: '30px', textAlign: 'center' }}>
-                                            <p>Giao xe tận nơi</p>
-                                        </Col>
-                                        <Col md={1}></Col>
-                                    </Row>
-
-
-                                    <p style={{ fontSize: '22px', fontWeight: '600', marginTop: '10px' }}>KIA K3 PREMEUM 2022</p>
-                                    <p><i className="bi bi-geo-alt"></i> &nbsp;Quận Bình Thạnh, TP.Hồ Chí Minh</p>
-
-                                    <hr />
-                                    <div>
-                                        <i className="bi bi-star-fill" style={{ display: 'inline-block', color: 'orange' }}></i> 5.0&nbsp;&nbsp;
-                                        <i className="bi bi-suitcase-fill" style={{ display: 'inline-block', color: '#5fcf86' }}></i>39 chuyến
-                                        <del style={{ marginLeft: '10px', fontWeight: '500', color: 'gray' }}>530k</del>
-                                        <span style={{ color: '#5fcf86', fontWeight: '500', fontSize: '22px', marginLeft: '3px' }}>979K</span>/ngày
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                        <Col>
-                            <Card style={{ width: '19rem', marginBottom: '20px', height: '29rem' }}>
-                                <Card.Body>
-
-                                    <Card.Subtitle className="mb-2 text-muted ">
-                                        <img src='https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_t…2022/p/g/2023/05/08/11/8m5zlQXLo2ZSB355RmFa1g.jpg' width={270} height={240} />
-                                    </Card.Subtitle>
-
-                                    <Row className='mt-3'>
-                                        <Col md={5} style={{ backgroundColor: '#eef7ff', borderRadius: '10px', height: '30px', textAlign: 'center' }}>
-                                            <p>Số tự động</p>
-                                        </Col>
-                                        &nbsp;
-                                        <Col md={6} style={{ backgroundColor: '#dff5e7', borderRadius: '10px', height: '30px', textAlign: 'center' }}>
-                                            <p>Giao xe tận nơi</p>
-                                        </Col>
-                                        <Col md={1}></Col>
-                                    </Row>
-
-
-                                    <p style={{ fontSize: '22px', fontWeight: '600', marginTop: '10px' }}>KIA K3 PREMEUM 2022</p>
-                                    <p><i className="bi bi-geo-alt"></i> &nbsp;Quận Bình Thạnh, TP.Hồ Chí Minh</p>
-
-                                    <hr />
-                                    <div>
-                                        <i className="bi bi-star-fill" style={{ display: 'inline-block', color: 'orange' }}></i> 5.0&nbsp;&nbsp;
-                                        <i className="bi bi-suitcase-fill" style={{ display: 'inline-block', color: '#5fcf86' }}></i>39 chuyến
-                                        <del style={{ marginLeft: '10px', fontWeight: '500', color: 'gray' }}>530k</del>
-                                        <span style={{ color: '#5fcf86', fontWeight: '500', fontSize: '22px', marginLeft: '3px' }}>979K</span>/ngày
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </Col> */}
                     </Row>
                     <Row className='card-e'>
                         <Col>

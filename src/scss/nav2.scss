@@ -1,4 +1,62 @@
 .main2 {
+    .nav-head {
+        .title {
+            margin-top: -440px;
+            position: absolute;
+            right: 400px;
+
+            .first {
+                color: rgb(235, 229, 229);
+                font-size: 66px;
+                font-weight: 500;
+            }
+
+            .second {
+                width: 300px;
+                size: 30px;
+                left: 150px;
+                position: relative;
+                color: white;
+            }
+
+            .three {
+                color: white;
+                font-size: 23px;
+                font-weight: 500;
+                position: relative;
+                right: 100px;
+
+                span {
+                    color: #5fcf86;
+                }
+            }
+        }
+
+        .nav-pill {
+            height: 100px;
+            bottom: 100px;
+            position: relative;
+            margin-left: 310px;
+
+            .nav-pill-c {
+                height: 160px;
+                width: 240px;
+                text-align: center;
+                font-size: 22px;
+                text-decoration: none;
+                font-weight: 500;
+                box-shadow: 1px 2px 2px 1px #f4f5f4;
+                background-color: #dfdede;
+
+                .nav-link.active {
+                    background-color: #5fcf86;
+                    box-shadow: 1px 2px 2px 2px #5fcf86;
+                    border-radius: 10px;
+                }
+            }
+        }
+
+    }
 
     .main-header {
         width: 900px;

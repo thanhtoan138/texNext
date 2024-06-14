@@ -1,0 +1,57 @@
+.product {
+    .eight {
+        margin-top: 45px;
+
+        img {
+            border-radius: 40px;
+        }
+
+        .title {
+            .name {
+                display: grid;
+                grid-template-columns: auto auto;
+                grid-column-gap: 150px;
+                margin-top: 20px;
+
+                .heart {
+                    margin-top: 10px;
+
+                    i {
+                        background-color: #f6f6f6;
+                        color: rgb(83, 81, 81);
+                        border-radius: 100%;
+                        border: 1px solid #a2a29e;
+                        padding-left: 17px;
+                        padding-right: 17px;
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                        font-size: 20px;
+                        margin-left: 20px;
+                    }
+                }
+            }
+
+            .number {
+                margin-top: 10px;
+
+                span {
+                    margin-left: 20px;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                    padding-top: 5px;
+                    padding-bottom: 5px;
+                    border-radius: 30px;
+                }
+            }
+        }
+
+        .ford {
+            margin-top: 40px;
+
+            img {
+                border-radius: 30px;
+                padding: 5px;
+            }
+        }
+    }
+}

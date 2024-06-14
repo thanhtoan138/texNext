@@ -5,12 +5,54 @@ import "../../scss/nav3.scss";
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-
+import Link from 'next/link';
+import { Nav } from 'react-bootstrap';
 const MainChild3 = () => {
 
     return (
 
         <div className='main3 w-100'>
+            <Container>
+                <div className='nav-head'>
+                    <div className='img-bg w-100 mt-3'>
+                        <img src='https://www.mioto.vn/static/media/bg-landingpage-1.34e13e49.png' alt='' width={1300} height={600} />
+                    </div>
+                    <div className='title'>
+                        <p className='first'>Mioto - Cùng Bạn<br /> Đến Mọi Hành Trình</p>
+                        <hr className='second' noshade="noshade" />
+                        <p className='three'>Trải nghiệm sự khác biệt từ <span>hơn 8000</span> xe gia đình đời mới khắp Việt Nam</p>
+                    </div>
+                    <div className='nav-pill'>
+                        <Nav variant="pills">
+
+                            <Nav.Item className='nav-pill-c' style={{ borderRadius: '10px 0px 0px 0px' }}>
+                                <Link className="nav-link" href='/' style={{ textDecoration: 'none', color: 'white' }}>
+                                    <i className="bi bi-car-front-fill"></i>&nbsp;Xe tự lái
+                                </Link>
+
+                            </Nav.Item>
+                            <Nav.Item className='nav-pill-c'>
+
+                                <Link className='nav-link' href='/main-child2' style={{ textDecoration: 'none', color: 'white' }}>
+                                    <i className="bi bi-bus-front-fill"></i>
+                                    &nbsp;Xe có tài xế
+                                </Link>
+
+                            </Nav.Item>
+                            <Nav.Item className='nav-pill-c' style={{ borderRadius: '0px 10px 0px 0px' }}>
+
+                                <Link className='nav-link' href='/main-child3' style={{ textDecoration: 'none', color: 'white' }} >
+                                    <i className="bi bi-bus-front-fill"></i>
+                                    &nbsp;Thuê xe dài hạn
+                                </Link>
+
+                            </Nav.Item>
+
+                        </Nav>
+
+                    </div>
+                </div>
+            </Container>
             <Container>
                 <div className='main-header bg-light'>
                     <Row>

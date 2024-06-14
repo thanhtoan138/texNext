@@ -47,7 +47,7 @@ const Header = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-            <Container>
+            {/* <Container>
                 <div className='nav-head'>
                     <div className='img-bg w-100 mt-3'>
                         <img src='https://www.mioto.vn/static/media/bg-landingpage-1.34e13e49.png' alt='' width={1300} height={600} />
@@ -68,7 +68,7 @@ const Header = () => {
                             </Nav.Item>
                             <Nav.Item className='nav-pill-c'>
 
-                                <Link className='nav-link' href='/dad/details' style={{ textDecoration: 'none', color: 'white' }}>
+                                <Link className='nav-link' href='/main-child2' style={{ textDecoration: 'none', color: 'white' }}>
                                     <i className="bi bi-bus-front-fill"></i>
                                     &nbsp;Xe có tài xế
                                 </Link>
@@ -87,7 +87,7 @@ const Header = () => {
 
                     </div>
                 </div>
-            </Container>
+            </Container> */}
 
 
             <Modal
