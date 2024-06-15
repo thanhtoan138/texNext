@@ -55,7 +55,7 @@ const Footer = () => {
             </Container>
             <hr />
             <Container>
-                <Row style={{ fontSize: '17px', fontWeight: "400", color: 'rgb(121, 118, 118)' }}>
+                <Row style={{ fontSize: '16px', fontWeight: "400", color: 'rgb(121, 118, 118)' }}>
                     <Col lg={3}>© Công ty Cổ Phần Mioto Asia</Col>
                     <Col lg={3}>Số GCNĐKKD: 0317307544</Col>
                     <Col lg={2}>Ngày cấp: 24-05-22</Col>
@@ -64,7 +64,7 @@ const Footer = () => {
             </Container>
             <hr />
             <Container>
-                <Row style={{ fontSize: '17px', fontWeight: "400", color: 'rgb(121, 118, 118)' }}>
+                <Row style={{ fontSize: '16px', fontWeight: "400", color: 'rgb(121, 118, 118)' }}>
                     <Col lg={3}>
                         <p>Địa chỉ: Văn phòng 02, Tầng 08, Tòa nhà
                             Pearl Plaza, Số 561A Điện Biên Phủ,
