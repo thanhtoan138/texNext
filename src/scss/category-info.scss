@@ -1,0 +1,19 @@
+.category {
+    .list {
+        margin-top: -16px;
+        font-size: 17px;
+        font-weight: 500;
+
+
+        .item {
+            padding: 12px;
+            color: black;
+
+            i {
+                padding-right: 10px;
+                color: gray;
+            }
+        }
+    }
+
+}

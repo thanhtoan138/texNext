@@ -1,0 +1,144 @@
+.account {
+    .infor {
+        background-color: white;
+        border-radius: 20px;
+        padding-left: 20px;
+        padding-top: 20px;
+        height: 380px;
+
+        .title {
+            display: flex;
+
+            i {
+                padding-left: 10px;
+            }
+        }
+
+        .marks {
+            display: flex;
+            font-size: 18px;
+            box-sizing: border-box;
+            border-radius: 12px;
+            width: 120px;
+            height: 50px;
+            padding: 10px;
+            border: 1px solid rgb(223, 221, 221);
+            margin-left: 30px;
+        }
+
+        .icon {
+            display: flex;
+            border: 1px solid rgb(211, 210, 210);
+            border-radius: 10px;
+            width: 140px;
+            height: 75px;
+            padding-left: 16px;
+            padding-top: 12px;
+            margin-left: 385px;
+
+            p {
+                color: #5fcf86;
+                font-size: 30px;
+                font-weight: 700;
+            }
+
+            span {
+                margin-top: 15px;
+                color: gray;
+                font-size: 14px;
+            }
+        }
+
+        .bons {
+            background-color: #ececec;
+            border-radius: 10px;
+            width: 525px;
+            height: 90px;
+            margin-top: 10px;
+            padding-left: 10px;
+            padding-top: 13px;
+        }
+
+        .contact {
+            margin-top: 10px;
+
+            .sdt {
+                display: flex;
+
+                .sdt-child {
+                    display: flex;
+                    font-size: 12px;
+                    background-color: rgb(241, 228, 209);
+                    padding-top: 6px;
+                    padding-left: 5px;
+                    width: 85px;
+                    height: 30px;
+                    border-radius: 20px;
+                    margin-left: 10px;
+                }
+            }
+
+            .email {
+                display: flex;
+
+                .email-child {
+                    display: flex;
+                    font-size: 12px;
+                    background-color: rgb(241, 228, 209);
+                    padding-top: 6px;
+                    padding-left: 5px;
+                    width: 85px;
+                    height: 30px;
+                    border-radius: 20px;
+                    margin-left: 10px;
+                }
+
+            }
+        }
+    }
+
+    .gplx {
+        display: flex;
+        margin-top: 20px;
+        background-color: white;
+        border-radius: 20px;
+        padding-left: 20px;
+        height: 380px;
+        padding-top: 20px;
+
+        .title {
+
+            .imgs {
+                display: flex;
+                font-size: 12px;
+                background-color: rgb(241, 228, 209);
+                padding-top: 6px;
+                padding-left: 5px;
+                width: 115px;
+                height: 30px;
+                border-radius: 20px;
+                margin-left: 10px;
+
+
+            }
+
+            // .edit {
+            //     display: flex;
+            //     border: 1px solid gray;
+            //     margin-left: 420px;
+            //     height: 48px;
+            //     width: 120px;
+            //     padding: 10px;
+            //     border-radius: 10px;
+            //     font-weight: 500;
+            // }
+        }
+
+
+    }
+
+    // .note {
+    //     background-color: #f04438;
+    // }
+
+}

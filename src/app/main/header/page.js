@@ -24,8 +24,10 @@ const Header = () => {
         <div className='header w-100'>
             <Navbar className="bg-body-tertiary">
                 <Container>
-                    <Navbar.Brand href="#home">
-                        <img src='https://www.mioto.vn/static/media/logo-full.ea382559.png' alt='' width={200} />
+                    <Navbar.Brand>
+                        <Link href='/'>
+                            <img src='https://www.mioto.vn/static/media/logo-full.ea382559.png' alt='' width={200} />
+                        </Link>
                     </Navbar.Brand>
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end">

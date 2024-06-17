@@ -356,7 +356,7 @@ const Product = () => {
                                     </Form>
                                     <Image src="/img/code2.png" alt="" width={40} height={30} style={{ position: 'relative', marginRight: '-20px' }} />
                                     <p style={{ fontSize: '18px' }}>Mã khuyến mãi</p>
-                                    <Image src="/img/arrow.png" width={30} height={30} alt='' style={{ position: 'absolute', fontWeight: 700, right: '140px' }} />
+                                    <Image src="/img/arrow.png" width={30} height={30} alt='' style={{ position: 'absolute', fontWeight: 700, right: '340px' }} />
                                 </div>
                             </div>
                             <hr />
@@ -387,14 +387,14 @@ const Product = () => {
             </Container>
 
             <div className="choose">
-            <Container style={{paddingTop:'30px'}}>
+                <Container style={{ paddingTop: '30px' }}>
                     <h4 >Xe tương tự</h4>
                     <div className="custom-pre">
                         <div className="swiper-button-next"></div>
-                        <div className="swiper-button-prev"></div>    
+                        <div className="swiper-button-prev"></div>
                     </div>
 
-                   
+
                     <div>
                         <Swiper
                             spaceBetween={100}
@@ -407,7 +407,7 @@ const Product = () => {
                                 nextEl: '.swiper-button-next',
                                 prevEl: '.swiper-button-prev',
                             }}
-                            modules={[ Navigation]}
+                            modules={[Navigation]}
                             className="mySwiper1"
                         >
                             <SwiperSlide>
@@ -417,18 +417,18 @@ const Product = () => {
                                             <img src='https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_t…2022/p/g/2024/01/20/13/4pvGdgRfdXG6EuykmRQ85w.jpg' width={300} height={240} />
                                             <div className="fast">
                                                 <p>Đặt xe nhanh</p>
-                                                <Image src='/img/storm.png' width={20} height={17} alt="" style={{marginLeft:'5px'}}/>
+                                                <Image src='/img/storm.png' width={20} height={17} alt="" style={{ marginLeft: '5px' }} />
                                             </div>
                                             <div className="like">
-                                                    <Image src='/img/heart.png' width={20} height={17} alt="" />
+                                                <Image src='/img/heart.png' width={20} height={17} alt="" />
                                             </div>
                                             <div className="logo">
-                                                <img src='https://n1-astg.mioto.vn/g/2023/00/23/22/-kwISjxUWB2J-t98nNtLMQ.jpg' width={40} height={40} alt=""/>
+                                                <img src='https://n1-astg.mioto.vn/g/2023/00/23/22/-kwISjxUWB2J-t98nNtLMQ.jpg' width={40} height={40} alt="" />
                                             </div>
-                                        
+
                                         </Card.Subtitle>
 
-                                        <Row className='' style={{position:'relative', bottom:'80px', marginBottom:'-80px'}}>
+                                        <Row className='' style={{ position: 'relative', bottom: '80px', marginBottom: '-80px' }}>
                                             <Col md={5} style={{ backgroundColor: '#eef7ff', borderRadius: '10px', height: '28px', textAlign: 'center' }}>
                                                 <p>Số tự động</p>
                                             </Col>
@@ -438,7 +438,7 @@ const Product = () => {
                                             </Col>
                                             <Col md={1}></Col>
                                         </Row>
-                                        <p style={{ fontSize: '22px', fontWeight: '600', marginTop: '10px', textAlign:'center' }}>KIA K3 PREMEUM 2022</p>
+                                        <p style={{ fontSize: '22px', fontWeight: '600', marginTop: '10px', textAlign: 'center' }}>KIA K3 PREMEUM 2022</p>
                                         <p><i className="bi bi-geo-alt"></i> &nbsp;Quận Bình Thạnh, TP.Hồ Chí Minh</p>
 
                                         <hr />
@@ -458,18 +458,18 @@ const Product = () => {
                                             <img src='https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_t…2013/p/g/2023/02/24/16/3tzuvcW_2ym0eCuolXVKyw.jpg' width={300} height={240} />
                                             <div className="fast">
                                                 <p>Đặt xe nhanh</p>
-                                                <Image src='/img/storm.png' width={20} height={17} alt="" style={{marginLeft:'5px'}}/>
+                                                <Image src='/img/storm.png' width={20} height={17} alt="" style={{ marginLeft: '5px' }} />
                                             </div>
                                             <div className="like">
-                                                    <Image src='/img/heart.png' width={20} height={17} alt="" />
+                                                <Image src='/img/heart.png' width={20} height={17} alt="" />
                                             </div>
                                             <div className="logo">
-                                                <img src='https://n1-astg.mioto.vn/g/2023/00/23/22/-kwISjxUWB2J-t98nNtLMQ.jpg' width={40} height={40} alt=""/>
+                                                <img src='https://n1-astg.mioto.vn/g/2023/00/23/22/-kwISjxUWB2J-t98nNtLMQ.jpg' width={40} height={40} alt="" />
                                             </div>
-                                        
+
                                         </Card.Subtitle>
 
-                                        <Row className='' style={{position:'relative', bottom:'80px', marginBottom:'-80px'}}>
+                                        <Row className='' style={{ position: 'relative', bottom: '80px', marginBottom: '-80px' }}>
                                             <Col md={5} style={{ backgroundColor: '#eef7ff', borderRadius: '10px', height: '28px', textAlign: 'center' }}>
                                                 <p>Số tự động</p>
                                             </Col>
@@ -479,7 +479,7 @@ const Product = () => {
                                             </Col>
                                             <Col md={1}></Col>
                                         </Row>
-                                        <p style={{ fontSize: '22px', fontWeight: '600', marginTop: '10px', textAlign:'center' }}>KIA K3 PREMEUM 2022</p>
+                                        <p style={{ fontSize: '22px', fontWeight: '600', marginTop: '10px', textAlign: 'center' }}>KIA K3 PREMEUM 2022</p>
                                         <p><i className="bi bi-geo-alt"></i> &nbsp;Quận Bình Thạnh, TP.Hồ Chí Minh</p>
 
                                         <hr />
@@ -499,18 +499,18 @@ const Product = () => {
                                             <img src='	https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_t…2018/p/g/2019/10/21/17/KFtbAg2F0PLU3qtTUGLD_g.jpg' width={300} height={240} />
                                             <div className="fast">
                                                 <p>Đặt xe nhanh</p>
-                                                <Image src='/img/storm.png' width={20} height={17} alt="" style={{marginLeft:'5px'}}/>
+                                                <Image src='/img/storm.png' width={20} height={17} alt="" style={{ marginLeft: '5px' }} />
                                             </div>
                                             <div className="like">
-                                                    <Image src='/img/heart.png' width={20} height={17} alt="" />
+                                                <Image src='/img/heart.png' width={20} height={17} alt="" />
                                             </div>
                                             <div className="logo">
-                                                <img src='https://n1-astg.mioto.vn/g/2023/00/23/22/-kwISjxUWB2J-t98nNtLMQ.jpg' width={40} height={40} alt=""/>
+                                                <img src='https://n1-astg.mioto.vn/g/2023/00/23/22/-kwISjxUWB2J-t98nNtLMQ.jpg' width={40} height={40} alt="" />
                                             </div>
-                                        
+
                                         </Card.Subtitle>
 
-                                        <Row className='' style={{position:'relative', bottom:'80px', marginBottom:'-80px'}}>
+                                        <Row className='' style={{ position: 'relative', bottom: '80px', marginBottom: '-80px' }}>
                                             <Col md={5} style={{ backgroundColor: '#eef7ff', borderRadius: '10px', height: '28px', textAlign: 'center' }}>
                                                 <p>Số tự động</p>
                                             </Col>
@@ -520,7 +520,7 @@ const Product = () => {
                                             </Col>
                                             <Col md={1}></Col>
                                         </Row>
-                                        <p style={{ fontSize: '22px', fontWeight: '600', marginTop: '10px', textAlign:'center' }}>KIA K3 PREMEUM 2022</p>
+                                        <p style={{ fontSize: '22px', fontWeight: '600', marginTop: '10px', textAlign: 'center' }}>KIA K3 PREMEUM 2022</p>
                                         <p><i className="bi bi-geo-alt"></i> &nbsp;Quận Bình Thạnh, TP.Hồ Chí Minh</p>
 
                                         <hr />
@@ -540,18 +540,18 @@ const Product = () => {
                                             <img src='	https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_t…2022/p/g/2023/03/15/00/-68auqGmo7CT3mGoSVx-bw.jpg' width={300} height={240} />
                                             <div className="fast">
                                                 <p>Đặt xe nhanh</p>
-                                                <Image src='/img/storm.png' width={20} height={17} alt="" style={{marginLeft:'5px'}}/>
+                                                <Image src='/img/storm.png' width={20} height={17} alt="" style={{ marginLeft: '5px' }} />
                                             </div>
                                             <div className="like">
-                                                    <Image src='/img/heart.png' width={20} height={17} alt="" />
+                                                <Image src='/img/heart.png' width={20} height={17} alt="" />
                                             </div>
                                             <div className="logo">
-                                                <img src='https://n1-astg.mioto.vn/g/2023/00/23/22/-kwISjxUWB2J-t98nNtLMQ.jpg' width={40} height={40} alt=""/>
+                                                <img src='https://n1-astg.mioto.vn/g/2023/00/23/22/-kwISjxUWB2J-t98nNtLMQ.jpg' width={40} height={40} alt="" />
                                             </div>
-                                        
+
                                         </Card.Subtitle>
 
-                                        <Row className='' style={{position:'relative', bottom:'80px', marginBottom:'-80px'}}>
+                                        <Row className='' style={{ position: 'relative', bottom: '80px', marginBottom: '-80px' }}>
                                             <Col md={5} style={{ backgroundColor: '#eef7ff', borderRadius: '10px', height: '28px', textAlign: 'center' }}>
                                                 <p>Số tự động</p>
                                             </Col>
@@ -561,7 +561,7 @@ const Product = () => {
                                             </Col>
                                             <Col md={1}></Col>
                                         </Row>
-                                        <p style={{ fontSize: '22px', fontWeight: '600', marginTop: '10px', textAlign:'center' }}>KIA K3 PREMEUM 2022</p>
+                                        <p style={{ fontSize: '22px', fontWeight: '600', marginTop: '10px', textAlign: 'center' }}>KIA K3 PREMEUM 2022</p>
                                         <p><i className="bi bi-geo-alt"></i> &nbsp;Quận Bình Thạnh, TP.Hồ Chí Minh</p>
 
                                         <hr />
@@ -581,18 +581,18 @@ const Product = () => {
                                             <img src='https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_t…2022/p/g/2024/01/20/13/4pvGdgRfdXG6EuykmRQ85w.jpg' width={300} height={240} />
                                             <div className="fast">
                                                 <p>Đặt xe nhanh</p>
-                                                <Image src='/img/storm.png' width={20} height={17} alt="" style={{marginLeft:'5px'}}/>
+                                                <Image src='/img/storm.png' width={20} height={17} alt="" style={{ marginLeft: '5px' }} />
                                             </div>
                                             <div className="like">
-                                                    <Image src='/img/heart.png' width={20} height={17} alt="" />
+                                                <Image src='/img/heart.png' width={20} height={17} alt="" />
                                             </div>
                                             <div className="logo">
-                                                <img src='https://n1-astg.mioto.vn/g/2023/00/23/22/-kwISjxUWB2J-t98nNtLMQ.jpg' width={40} height={40} alt=""/>
+                                                <img src='https://n1-astg.mioto.vn/g/2023/00/23/22/-kwISjxUWB2J-t98nNtLMQ.jpg' width={40} height={40} alt="" />
                                             </div>
-                                        
+
                                         </Card.Subtitle>
 
-                                        <Row className='' style={{position:'relative', bottom:'80px', marginBottom:'-80px'}}>
+                                        <Row className='' style={{ position: 'relative', bottom: '80px', marginBottom: '-80px' }}>
                                             <Col md={5} style={{ backgroundColor: '#eef7ff', borderRadius: '10px', height: '28px', textAlign: 'center' }}>
                                                 <p>Số tự động</p>
                                             </Col>
@@ -602,7 +602,7 @@ const Product = () => {
                                             </Col>
                                             <Col md={1}></Col>
                                         </Row>
-                                        <p style={{ fontSize: '22px', fontWeight: '600', marginTop: '10px', textAlign:'center' }}>KIA K3 PREMEUM 2022</p>
+                                        <p style={{ fontSize: '22px', fontWeight: '600', marginTop: '10px', textAlign: 'center' }}>KIA K3 PREMEUM 2022</p>
                                         <p><i className="bi bi-geo-alt"></i> &nbsp;Quận Bình Thạnh, TP.Hồ Chí Minh</p>
 
                                         <hr />
@@ -622,18 +622,18 @@ const Product = () => {
                                             <img src='https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_t…2022/p/g/2024/01/20/13/4pvGdgRfdXG6EuykmRQ85w.jpg' width={300} height={240} />
                                             <div className="fast">
                                                 <p>Đặt xe nhanh</p>
-                                                <Image src='/img/storm.png' width={20} height={17} alt="" style={{marginLeft:'5px'}}/>
+                                                <Image src='/img/storm.png' width={20} height={17} alt="" style={{ marginLeft: '5px' }} />
                                             </div>
                                             <div className="like">
-                                                    <Image src='/img/heart.png' width={20} height={17} alt="" />
+                                                <Image src='/img/heart.png' width={20} height={17} alt="" />
                                             </div>
                                             <div className="logo">
-                                                <img src='https://n1-astg.mioto.vn/g/2023/00/23/22/-kwISjxUWB2J-t98nNtLMQ.jpg' width={40} height={40} alt=""/>
+                                                <img src='https://n1-astg.mioto.vn/g/2023/00/23/22/-kwISjxUWB2J-t98nNtLMQ.jpg' width={40} height={40} alt="" />
                                             </div>
-                                        
+
                                         </Card.Subtitle>
 
-                                        <Row className='' style={{position:'relative', bottom:'80px', marginBottom:'-80px'}}>
+                                        <Row className='' style={{ position: 'relative', bottom: '80px', marginBottom: '-80px' }}>
                                             <Col md={5} style={{ backgroundColor: '#eef7ff', borderRadius: '10px', height: '28px', textAlign: 'center' }}>
                                                 <p>Số tự động</p>
                                             </Col>
@@ -643,7 +643,7 @@ const Product = () => {
                                             </Col>
                                             <Col md={1}></Col>
                                         </Row>
-                                        <p style={{ fontSize: '22px', fontWeight: '600', marginTop: '10px', textAlign:'center' }}>KIA K3 PREMEUM 2022</p>
+                                        <p style={{ fontSize: '22px', fontWeight: '600', marginTop: '10px', textAlign: 'center' }}>KIA K3 PREMEUM 2022</p>
                                         <p><i className="bi bi-geo-alt"></i> &nbsp;Quận Bình Thạnh, TP.Hồ Chí Minh</p>
 
                                         <hr />
@@ -663,18 +663,18 @@ const Product = () => {
                                             <img src='https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_t…2022/p/g/2024/01/20/13/4pvGdgRfdXG6EuykmRQ85w.jpg' width={300} height={240} />
                                             <div className="fast">
                                                 <p>Đặt xe nhanh</p>
-                                                <Image src='/img/storm.png' width={20} height={17} alt="" style={{marginLeft:'5px'}}/>
+                                                <Image src='/img/storm.png' width={20} height={17} alt="" style={{ marginLeft: '5px' }} />
                                             </div>
                                             <div className="like">
-                                                    <Image src='/img/heart.png' width={20} height={17} alt="" />
+                                                <Image src='/img/heart.png' width={20} height={17} alt="" />
                                             </div>
                                             <div className="logo">
-                                                <img src='https://n1-astg.mioto.vn/g/2023/00/23/22/-kwISjxUWB2J-t98nNtLMQ.jpg' width={40} height={40} alt=""/>
+                                                <img src='https://n1-astg.mioto.vn/g/2023/00/23/22/-kwISjxUWB2J-t98nNtLMQ.jpg' width={40} height={40} alt="" />
                                             </div>
-                                        
+
                                         </Card.Subtitle>
 
-                                        <Row className='' style={{position:'relative', bottom:'80px', marginBottom:'-80px'}}>
+                                        <Row className='' style={{ position: 'relative', bottom: '80px', marginBottom: '-80px' }}>
                                             <Col md={5} style={{ backgroundColor: '#eef7ff', borderRadius: '10px', height: '28px', textAlign: 'center' }}>
                                                 <p>Số tự động</p>
                                             </Col>
@@ -684,7 +684,7 @@ const Product = () => {
                                             </Col>
                                             <Col md={1}></Col>
                                         </Row>
-                                        <p style={{ fontSize: '22px', fontWeight: '600', marginTop: '10px', textAlign:'center' }}>KIA K3 PREMEUM 2022</p>
+                                        <p style={{ fontSize: '22px', fontWeight: '600', marginTop: '10px', textAlign: 'center' }}>KIA K3 PREMEUM 2022</p>
                                         <p><i className="bi bi-geo-alt"></i> &nbsp;Quận Bình Thạnh, TP.Hồ Chí Minh</p>
 
                                         <hr />
@@ -697,10 +697,10 @@ const Product = () => {
                                     </Card.Body>
                                 </Card>
                             </SwiperSlide>
-                            
+
                         </Swiper>
                     </div>
-                </Container>               
+                </Container>
 
             </div>
         </div >

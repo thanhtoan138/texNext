@@ -3,7 +3,6 @@ import Container from 'react-bootstrap/Container';
 import { Row, Col } from 'react-bootstrap';
 import "../../scss/nav1.scss";
 import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
@@ -14,11 +13,10 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import useSWR from 'swr';
 import { useEffect } from 'react';
-import { usePathname } from 'next/navigation';
 import Link from "next/link";
 import { useRouter } from 'next/navigation';
+
 const MainChild1 = () => {
     const router = useRouter();
 
@@ -165,12 +163,14 @@ const MainChild1 = () => {
                     <Row className='card-e'>
                         {data?.map((item) => {
                             return (
-                                <Col>
+                                <Col key={item.id}>
                                     <Card style={{ width: '19rem', marginBottom: '60px', height: '29rem' }}>
                                         <Card.Body>
 
                                             <Card.Subtitle className="mb-2 text-muted ">
-                                                <img src={item.image} width={270} height={240} />
+                                                <Link href='/product'>
+                                                    <img src={item.image} width={270} height={240} />
+                                                </Link>
                                             </Card.Subtitle>
 
                                             <Row className='mt-3'>
@@ -183,11 +183,12 @@ const MainChild1 = () => {
                                                 </Col>
                                                 <Col md={1}></Col>
                                             </Row>
-                                            <p style={{ fontSize: '22px', fontWeight: '600', marginTop: '10px', textAlign: 'center' }}>
-
-                                                {item.name}
-
-                                            </p>
+                                            {/* href={`/product/${item.id}`} */}
+                                            <Link href={`/product`} style={{ textDecoration: "none", color: 'black' }}>
+                                                <p style={{ fontSize: '22px', fontWeight: '600', marginTop: '10px', textAlign: 'center' }}>
+                                                    {item.name}
+                                                </p>
+                                            </Link>
                                             <p><i className="bi bi-geo-alt"></i> &nbsp;Quận Bình Thạnh, TP.Hồ Chí Minh</p>
 
                                             <hr />
