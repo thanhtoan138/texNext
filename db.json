@@ -28,5 +28,16 @@
             "price": 900,
             "discount": 0.5
         }
+    ],
+    "users": [
+        {
+            "id": "u1",
+            "username": "tran van a",
+            "password": 123456,
+            "email": "a@gmail.com",
+            "phone": "0912312321",
+            "bonse": "23/10/1998",
+            "role": 1
+        }
     ]
 }
