@@ -1,0 +1,93 @@
+.findcar {
+    // background-color: #cecbcb;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+
+    .head {
+        background-color: white;
+
+        .calendar {
+            display: flex;
+            justify-content: center;
+            font-size: 20px;
+            color: rgb(61, 60, 60);
+            gap: 10px;
+        }
+
+        .mySwiper {
+            margin-left: 80px;
+            width: 1100px;
+            margin-top: -50px;
+
+            .nav-car {
+                border: 1px solid gray;
+                text-align: center;
+                padding-top: 5px;
+                height: 34px;
+                border-radius: 20px;
+                font-size: 14px;
+                width: 120px;
+            }
+
+
+
+            .custom-pre {
+                margin-top: 20px;
+                position: relative;
+                // top: 150px;
+                --swiper-navigation-size: 10px;
+
+                .turn {
+                    border: 1px solid gray;
+                    padding: 9px;
+                    padding-left: 12px;
+                    border-radius: 100%;
+                    width: 41px;
+                    height: 41px;
+                    position: relative;
+                    top: 34px;
+                    right: 70px;
+                }
+
+                .filter {
+                    position: absolute;
+                    top: 40px;
+                    left: 1110px;
+                    border: 1px solid gray;
+                    padding: 8px;
+                    width: 90px;
+                    height: 35px;
+                    border-radius: 5px;
+                }
+
+
+                .swiper-button-next {
+                    border: 1px solid gray;
+                    color: rgb(19, 18, 18);
+                    padding: 20px;
+                    background-color: white;
+                    border-radius: 100%;
+                    font-weight: bold;
+                    top: 40px;
+                    left: 1060px;
+                }
+
+                .swiper-button-prev {
+                    border: 1px solid gray;
+                    color: black;
+                    padding: 20px;
+                    background-color: white;
+                    border-radius: 100%;
+                    font-weight: bold;
+                    // position: relative;
+                    top: 40px;
+                    left: -20px;
+                }
+
+
+            }
+        }
+    }
+}

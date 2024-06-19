@@ -3,6 +3,7 @@ import CategoryLogin from "../sidebar/category-infor/page";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
+
 export default function LoginLayout({ children }) {
     return (
         <div style={{ backgroundColor: '#f6f6f6', }}>

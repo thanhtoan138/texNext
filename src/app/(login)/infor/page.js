@@ -7,7 +7,10 @@ import Image from 'next/image';
 import Nav from 'react-bootstrap/Nav';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
+
+
 import { useEffect, useState } from 'react';
+
 const Infor = () => {
     const [user, setUsers] = useState(null);
     useEffect(() => {
@@ -17,6 +20,7 @@ const Infor = () => {
                 setUsers(data)
             })
     })
+
 
     return (
         <div className="account">
@@ -176,6 +180,8 @@ const Infor = () => {
                 <div className='flex-container'>
                     <p style={{ fontSize: '24px', fontWeight: 500 }}>Danh sách xe</p>
                     <div className='tax'>
+
+
                         <Tabs
                             defaultActiveKey="profile"
                             id="fill-tab-example"
@@ -186,16 +192,8 @@ const Infor = () => {
                             </Tab>
                             <Tab eventKey="profile" title="Tự lái">
                             </Tab>
-
                         </Tabs>
-                        {/* <Nav variant="underline" defaultActiveKey="">
-                            <Nav.Item className='tab1'>
-                                <Nav.Link href="" className='navlink1'>Có tài xế</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item className='tab2'>
-                                <Nav.Link href="" className='navlink2'>Tự lái</Nav.Link>
-                            </Nav.Item>
-                        </Nav> */}
+
                     </div>
 
                 </div>

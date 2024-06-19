@@ -1,0 +1,42 @@
+.listcar {
+
+    img {
+
+        border-radius: 17px;
+
+    }
+
+    .fast {
+        font-size: 12px;
+        display: flex;
+        position: relative;
+        bottom: 230px;
+        left: 6px;
+        color: white;
+        border: 1px solid gray;
+        width: 120px;
+        padding: 8px;
+        height: 30px;
+        border-radius: 30px;
+        background-color: rgba(12, 12, 12, .5);
+    }
+
+    .like {
+        position: relative;
+        bottom: 260px;
+        left: 260px;
+        // margin-left: 5px;
+        width: 33px;
+        padding: 6px;
+        height: 31px;
+        border-radius: 100%;
+        background-color: rgba(12, 12, 12, .5);
+    }
+
+    .logo {
+        position: relative;
+        bottom: 85px;
+        left: 30px;
+    }
+
+}
