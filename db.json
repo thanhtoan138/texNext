@@ -273,7 +273,8 @@
             "email": "a@gmail.com",
             "phone": "0912312321",
             "bonse": "23/10/1998",
-            "role": 1
+            "role": true,
+            "code": ""
         }
     ]
 }

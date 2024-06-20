@@ -1,7 +1,7 @@
 'use client';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Link from 'next/link';
 import '../../../scss/header.scss';
@@ -19,6 +19,37 @@ const Header = () => {
     const handleShow = () => setShow(true);
     const handleShowRegister = () => setShowRegister(true);
 
+    const [phone,setPhone] = useState("");
+    const [username,setUsername] = useState("");
+    const [pass,setPassWord] = useState("");
+    const [code,setCode] = useState("");
+    const[confirm,setConfirm] = useState("");
+    const register =(e)=>{
+        e.preventDefault();
+       if(pass === "" && confirm==="" && username=="" && phone=="" ){
+            alert("Field empty");
+       }else if(!pass === pass){
+        alert("Password not match");
+       }else{
+        
+            const fetchData = async()=>{
+                const res = await fetch('http://localhost:8000/users',{
+                    headers: {'Content-Type': 'application/json'},
+                    method: 'POST',
+                    data:{
+                        username:username,
+                        password:pass,
+                        phone:phone,
+                        code:code,
+                        role:false                   
+                    }
+                }).then((response) => alert('success', response))
+                    .catch((error) => console.log(error))
+            }
+       
+       }
+       
+    }
 
     return (
         <div className='header w-100'>
@@ -49,47 +80,7 @@ const Header = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-            {/* <Container>
-                <div className='nav-head'>
-                    <div className='img-bg w-100 mt-3'>
-                        <img src='https://www.mioto.vn/static/media/bg-landingpage-1.34e13e49.png' alt='' width={1300} height={600} />
-                    </div>
-                    <div className='title'>
-                        <p className='first'>Mioto - Cùng Bạn<br /> Đến Mọi Hành Trình</p>
-                        <hr className='second' noshade="noshade" />
-                        <p className='three'>Trải nghiệm sự khác biệt từ <span>hơn 8000</span> xe gia đình đời mới khắp Việt Nam</p>
-                    </div>
-                    <div className='nav-pill'>
-                        <Nav variant="pills">
-
-                            <Nav.Item className='nav-pill-c' style={{ borderRadius: '10px 0px 0px 0px' }}>
-                                <Link className="nav-link" href='/main-child1' style={{ textDecoration: 'none', color: 'white' }}>
-                                    <i className="bi bi-car-front-fill"></i>&nbsp;Xe tự lái
-                                </Link>
-
-                            </Nav.Item>
-                            <Nav.Item className='nav-pill-c'>
-
-                                <Link className='nav-link' href='/main-child2' style={{ textDecoration: 'none', color: 'white' }}>
-                                    <i className="bi bi-bus-front-fill"></i>
-                                    &nbsp;Xe có tài xế
-                                </Link>
-
-                            </Nav.Item>
-                            <Nav.Item className='nav-pill-c' style={{ borderRadius: '0px 10px 0px 0px' }}>
-
-                                <Link className='nav-link' href='/main-child3' style={{ textDecoration: 'none', color: 'white' }} >
-                                    <i className="bi bi-bus-front-fill"></i>
-                                    &nbsp;Thuê xe dài hạn
-                                </Link>
-
-                            </Nav.Item>
-
-                        </Nav>
-
-                    </div>
-                </div>
-            </Container> */}
+           
 
 
             <Modal
@@ -156,19 +147,23 @@ const Header = () => {
 
                 <Modal.Body style={{ height: '700px' }}>
                     <h4 style={{ textAlign: 'center', marginBottom: '25px', }}>Đăng ký</h4>
-                    <div className='form2 '>
+                    <div className='form2 ' onSubmit={register}>
                         <Form.Label htmlFor="sdt">Số điện thoại</Form.Label>
                         <Form.Control
                             type="text"
                             id="sdt"
                             aria-describedby="passwordHelpBlock"
+                            name='phone'
+                            onChange={(e)=>setPhone(e.target.value)}
                         />
 
                         <Form.Label htmlFor="sdt">Tên hiển thị</Form.Label>
                         <Form.Control
                             type="text"
-                            id="sdt"
+                            id="username"
                             aria-describedby="passwordHelpBlock"
+                            name='username'
+                            onChange={(e)=>setUsername(e.target.value)}
                         />
 
                         <Form.Label htmlFor="inputPassword5" style={{ marginTop: '10px' }}>Mật khẩu </Form.Label>
@@ -176,7 +171,8 @@ const Header = () => {
                             type="password"
                             id="inputPassword5"
                             aria-describedby="passwordHelpBlock"
-
+                            name='pass'
+                            onChange={(e)=>setPassWord(e.target.value)}
                         />
 
                         <Form.Label htmlFor="inputPassword5" style={{ marginTop: '10px' }}>Xác nhận mật khẩu</Form.Label>
@@ -184,14 +180,16 @@ const Header = () => {
                             type="password"
                             id="inputPassword5"
                             aria-describedby="passwordHelpBlock"
-
+                            name='confirm'
+                            onChange={(e)=>setPhone(e.target.value)}
                         />
 
                         <Form.Label htmlFor="sdt">Mã giới thiệu</Form.Label>
                         <Form.Control
                             type="text"
-                            id="inputPassword5"
                             aria-describedby="passwordHelpBlock"
+                            name='code'
+                            onChange={(e)=>setCode(e.target.value)}
                         />
                         <Form style={{ display: 'flex', marginTop: '10px' }}>
                             {['checkbox'].map((type) => (
@@ -208,7 +206,7 @@ const Header = () => {
                         </Form>
                         <i className="a bi bi-eye-slash" style={{ position: 'relative', bottom: '175px', left: '437px' }}></i>
                         <i className="b bi bi-eye-slash" style={{ position: 'relative', bottom: '105px', left: '422px' }}></i>
-                        <a className='dk btn'>Đăng ký</a>
+                        <a className='dk btn' type='submit'>Đăng ký</a>
                         <div className='equal'>
                             <a className='fb btn'><img src='https://nhanhtravel.com/wp-content/uploads/2022/12/TS-FB-Icon1-e1670787566310.png' width={18} /> Facebook</a>
                             <a className='gg btn'><img src='https://cdn.pixabay.com/photo/2021/05/24/09/15/google-logo-6278331_960_720.png' width={18} /> Google</a>

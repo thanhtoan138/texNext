@@ -18,6 +18,7 @@ const Zoom = () => {
         setShow(true);
     }
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
+    
     return (
         <div className="zoom">
 

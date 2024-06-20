@@ -8,9 +8,14 @@ import Card from 'react-bootstrap/Card';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import 'swiper/css/free-mode';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { useEffect, useState } from "react";
+import { useEffect,useRef, useState } from "react";
+import { FreeMode, Thumbs } from 'swiper/modules';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+
 // import { DatePicker } from "antd";
 // import armchair from "../../img/armchair.png";
 const Product = ({ params }: { params: { id: number } }) => {
@@ -32,6 +37,15 @@ const Product = ({ params }: { params: { id: number } }) => {
     //             setData(data);
     //         })
     // })
+    const values = [true];
+    const [fullscreen, setFullscreen] = useState(true);
+    const [show, setShow] = useState(false);
+    function handleShow(breakpoint) {
+        setFullscreen(breakpoint);
+        setShow(true);
+    }
+    const [thumbsSwiper, setThumbsSwiper] = useState(null);
+    
 
     return (
         <div>
@@ -728,7 +742,73 @@ const Product = ({ params }: { params: { id: number } }) => {
                                 </Container>
 
                             </div>
+                            {/* zooommm                 */}
+                            <div className="zoom" >
+
+                                <Button className="me-2 mb-2" onClick={() => handleShow(values)}>
+                                    Full screen
+
+                                </Button>
+
+                                <Modal className='body' show={show} fullscreen={fullscreen} onHide={() => setShow(false)}>
+                                    <Modal.Header closeButton>
+
+                                    </Modal.Header>
+                                    <Modal.Body style={{ backgroundColor: 'black'}}>
+                                        <div className='slide' >
+                                            <Swiper
+
+                                                loop={true}
+                                                spaceBetween={10}
+                                                navigation={true}
+                                                thumbs={{ swiper: thumbsSwiper }}
+                                                modules={[FreeMode, Navigation, Thumbs]}
+                                                className="mySwiper2"
+                                                style={{ position: 'relative', width: '1200px' }}>
+                                                <SwiperSlide>
+                                                    <img src={item.image1} width={1200} height={540} />
+                                                </SwiperSlide>
+                                                <SwiperSlide>
+                                                    <img src={item.image2} width={1200} height={700} />
+                                                </SwiperSlide>
+                                                <SwiperSlide>
+                                                    <img src={item.image3} width={1200} height={700} />
+                                                </SwiperSlide>
+                                                <SwiperSlide>
+                                                    <img src={item.image4} width={1200} height={700} />
+                                                </SwiperSlide>
+                                            </Swiper>
+                                            <Swiper
+                                                onSwiper={setThumbsSwiper}
+                                                loop={true}
+                                                spaceBetween={30}
+                                                slidesPerView={15}
+                                                freeMode={true}
+                                                watchSlidesProgress={true}
+                                                modules={[FreeMode, Navigation, Thumbs]}
+                                                className="mySwiper"
+                                                style={{ height: '200px'}}>
+                                                <SwiperSlide style={{ width: '120px', borderRadius: '10px', top: '7px' }}>
+                                                    <img  src={item.image1} width={120} height={100} style={{ border: '1px solid white', borderRadius: '10px' }} />
+                                                </SwiperSlide>
+                                                <SwiperSlide style={{ width: '120px', borderRadius: '20px', top: '7px' }}>
+                                                    <img  src={item.image2} width={120} height={100} style={{ border: '1px solid white', borderRadius: '10px', marginBottom: '-40px' }} />
+                                                </SwiperSlide>
+                                                <SwiperSlide style={{ width: '120px', borderRadius: '20px', top: '7px' }}>
+                                                    <img  src={item.image3} width={120} height={100} style={{ border: '1px solid white', borderRadius: '10px', marginBottom: '-40px' }} />
+                                                </SwiperSlide>
+                                                <SwiperSlide style={{ width: '120px', borderRadius: '20px', top: '7px' }}>
+                                                    <img  src={item.image4} width={120} height={100} style={{ border: '1px solid white', borderRadius: '10px', marginBottom: '-40px' }} />
+                                                </SwiperSlide>
+                                                    </Swiper>
+                                                </div>
+                                            </Modal.Body>
+                                        </Modal>
+
+                                </div>              
                         </div >
+                       
+                        
                     )
                 }
             })}
