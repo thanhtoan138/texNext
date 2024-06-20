@@ -1,42 +1,68 @@
 .listcar {
 
-    img {
+    margin-top: 20px;
+    height: 2500px;
+    margin-bottom: -20px;
 
-        border-radius: 17px;
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        margin-top: 20px;
+        gap: 12px;
 
+
+        img {
+
+            border-radius: 17px;
+
+        }
+
+        .fast {
+            font-size: 12px;
+            display: flex;
+            position: relative;
+            bottom: 205px;
+            left: 6px;
+            color: white;
+            border: 1px solid gray;
+            width: 120px;
+            padding: 8px;
+            height: 30px;
+            border-radius: 30px;
+            background-color: rgba(12, 12, 12, .5);
+        }
+
+        .like {
+            position: relative;
+            bottom: 235px;
+            left: 230px;
+            width: 33px;
+            padding: 6px;
+            height: 31px;
+            border-radius: 100%;
+            background-color: rgba(12, 12, 12, .5);
+        }
+
+        .logo {
+            position: relative;
+            bottom: 85px;
+            left: 30px;
+        }
+
+        .discount {
+            position: relative;
+            bottom: 114px;
+            left: 189px;
+            background-color: #f26a2b;
+            border-radius: 20px;
+            color: white;
+            padding: 5px;
+            width: 70px;
+            font-size: 12px;
+            text-align: center;
+
+        }
     }
 
-    .fast {
-        font-size: 12px;
-        display: flex;
-        position: relative;
-        bottom: 230px;
-        left: 6px;
-        color: white;
-        border: 1px solid gray;
-        width: 120px;
-        padding: 8px;
-        height: 30px;
-        border-radius: 30px;
-        background-color: rgba(12, 12, 12, .5);
-    }
-
-    .like {
-        position: relative;
-        bottom: 260px;
-        left: 260px;
-        // margin-left: 5px;
-        width: 33px;
-        padding: 6px;
-        height: 31px;
-        border-radius: 100%;
-        background-color: rgba(12, 12, 12, .5);
-    }
-
-    .logo {
-        position: relative;
-        bottom: 85px;
-        left: 30px;
-    }
 
 }

@@ -22,7 +22,7 @@ const Header = () => {
 
     return (
         <div className='header w-100'>
-            <Navbar className="bg-body-tertiary">
+            <Navbar className="">
                 <Container>
                     <Navbar.Brand>
                         <Link href='/'>

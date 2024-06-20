@@ -21,8 +21,8 @@ const HeaderCar = () => {
                     </div>
                     <div className="mySwiper">
                         <div className="custom-pre">
-                            <div className='turn'> <i class="bi bi-recycle"></i></div>
-                            <div className='filter'><i class="bi bi-filter-square"><b> Bộ lọc</b></i></div>
+                            <div className='turn'> <i className="bi bi-recycle"></i></div>
+                            <div className='filter'><i className="bi bi-filter-square"><b> Bộ lọc</b></i></div>
                             <div className="swiper-button-next"></div>
                             <div className="swiper-button-prev"></div>
                         </div>
@@ -43,48 +43,48 @@ const HeaderCar = () => {
                         >
                             <SwiperSlide>
                                 <div className='nav-car'>
-                                    <p><i class="bi bi-ev-front-fill"></i> Loại xe</p>
+                                    <p><i className="bi bi-ev-front-fill"></i> Loại xe</p>
                                 </div>
 
                             </SwiperSlide>
                             <SwiperSlide>
                                 <div className='nav-car'>
-                                    <p> <i class="bi bi-globe-americas"></i> Hãng xe</p>
+                                    <p> <i className="bi bi-globe-americas"></i> Hãng xe</p>
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
                                 <div className='nav-car'>
-                                    <p> <i class="bi bi-airplane-engines"></i> Chủ xe 5 sao</p>
+                                    <p> <i className="bi bi-airplane-engines"></i> Chủ xe 5 sao</p>
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
                                 <div className='nav-car'>
-                                    <p><i class="bi bi-lightning-charge"></i> Đặt nhanh</p>
+                                    <p><i className="bi bi-lightning-charge"></i> Đặt nhanh</p>
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
                                 <div className='nav-car'>
-                                    <p><i class="bi bi-train-freight-front"></i > Miễn thuế chấp</p>
+                                    <p><i className="bi bi-train-freight-front"></i > Miễn thuế chấp</p>
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
                                 <div className='nav-car'>
-                                    <p> <i class="bi bi-radar"></i> Giao xe tận nơi</p>
+                                    <p> <i className="bi bi-radar"></i> Giao xe tận nơi</p>
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
                                 <div className='nav-car'>
-                                    <p><i class="bi bi-file-slides-fill"></i> Xe giảm giá</p>
+                                    <p><i className="bi bi-file-slides-fill"></i> Xe giảm giá</p>
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
                                 <div className='nav-car'>
-                                    <p><i class="bi bi-ev-front"></i> Xe điện</p>
+                                    <p><i className="bi bi-ev-front"></i> Xe điện</p>
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
                                 <div className='nav-car'>
-                                    <p><i class="bi bi-ev-station"></i> Truyền động</p>
+                                    <p><i className="bi bi-ev-station"></i> Truyền động</p>
                                 </div>
                             </SwiperSlide>
                         </Swiper>

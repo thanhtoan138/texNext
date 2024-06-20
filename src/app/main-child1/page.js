@@ -24,13 +24,23 @@ const MainChild1 = () => {
     const [isLoading, setLoading] = useState(true)
 
     useEffect(() => {
-        fetch('http://localhost:8000/products')
-            .then((res) => res.json())
-            .then((data) => {
-                setData(data)
-                setLoading(false)
-            })
-    }, [])
+        const fetchData = async () => {
+            const res = await fetch(
+                "http://localhost:8000/products");
+            const data = await res.json();
+            setData(data);
+        };
+        fetchData();
+    }, []);
+
+    // useEffect(() => {
+    //     fetch('http://localhost:8000/products')
+    //         .then((res) => res.json())
+    //         .then((data) => {
+    //             setData(data)
+    //             setLoading(false)
+    //         })
+    // }, [])
 
 
 
@@ -116,10 +126,10 @@ const MainChild1 = () => {
                             <div style={{ textAlign: 'left' }}>
                                 <span style={{ fontSize: '18px', fontWeight: '500' }}>21:00,08/06/2024 - 20:00 09/06/2024</span> &nbsp; &nbsp;
                                 <i className="bi bi-caret-down-fill"></i>&nbsp; &nbsp;
-                                <button style={{
-                                    color: 'white', backgroundColor: '#5fcf86', height: '50px',
+                                <button href='' style={{
+                                    backgroundColor: '#5fcf86', height: '50px',
                                     border: '1px solid white', borderRadius: '10px', width: '70px', fontWeight: '500'
-                                }}>Tìm xe</button>
+                                }}><Link href='/list-car' style={{ textDecoration: 'none', color: 'white' }}>Tìm xe</Link></button>
                             </div>
                         </Col>
                     </Row>
@@ -168,7 +178,7 @@ const MainChild1 = () => {
                                         <Card.Body>
 
                                             <Card.Subtitle className="mb-2 text-muted ">
-                                                <Link href='/product'>
+                                                <Link href={`/product/${item.id}`}>
                                                     <img src={item.image} width={270} height={240} />
                                                 </Link>
                                             </Card.Subtitle>
@@ -184,7 +194,7 @@ const MainChild1 = () => {
                                                 <Col md={1}></Col>
                                             </Row>
                                             {/* href={`/product/${item.id}`} */}
-                                            <Link href={`/product`} style={{ textDecoration: "none", color: 'black' }}>
+                                            <Link href={`/product/${item.id}`} style={{ textDecoration: "none", color: 'black' }}>
                                                 <p style={{ fontSize: '22px', fontWeight: '600', marginTop: '10px', textAlign: 'center' }}>
                                                     {item.name}
                                                 </p>
@@ -196,7 +206,7 @@ const MainChild1 = () => {
                                                 <i className="bi bi-star-fill" style={{ display: 'inline-block', color: 'orange' }}></i> 5.0&nbsp;&nbsp;
                                                 <i className="bi bi-suitcase-fill" style={{ display: 'inline-block', color: '#5fcf86' }}></i>39 chuyến
                                                 <del style={{ marginLeft: '10px', fontWeight: '500', color: 'gray' }}>{item.price}k</del>
-                                                <span style={{ color: '#5fcf86', fontWeight: '500', fontSize: '20px', marginLeft: '3px' }}>{item.price * item.discount}K</span>/ngày
+                                                <span style={{ color: '#5fcf86', fontWeight: '500', fontSize: '20px', marginLeft: '3px' }}>{item.price - (item.price * item.discount)}K</span>/ngày
                                             </div>
                                         </Card.Body>
                                     </Card>
