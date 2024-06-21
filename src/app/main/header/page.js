@@ -19,37 +19,37 @@ const Header = () => {
     const handleShow = () => setShow(true);
     const handleShowRegister = () => setShowRegister(true);
 
-    const [phone,setPhone] = useState("");
-    const [username,setUsername] = useState("");
-    const [pass,setPassWord] = useState("");
-    const [code,setCode] = useState("");
-    const[confirm,setConfirm] = useState("");
-    const register =(e)=>{
-        e.preventDefault();
-       if(pass === "" && confirm==="" && username=="" && phone=="" ){
-            alert("Field empty");
-       }else if(!pass === pass){
-        alert("Password not match");
-       }else{
-        
-            const fetchData = async()=>{
-                const res = await fetch('http://localhost:8000/users',{
-                    headers: {'Content-Type': 'application/json'},
-                    method: 'POST',
-                    data:{
-                        username:username,
-                        password:pass,
-                        phone:phone,
-                        code:code,
-                        role:false                   
-                    }
-                }).then((response) => alert('success', response))
-                    .catch((error) => console.log(error))
-            }
-       
-       }
-       
-    }
+    // const [phone, setPhone] = useState("");
+    // const [username, setUsername] = useState("");
+    // const [pass, setPassWord] = useState("");
+    // const [code, setCode] = useState("");
+    // const [confirm, setConfirm] = useState("");
+    // const register =(e)=>{
+    //     e.preventDefault();
+    //    if(pass === "" && confirm==="" && username=="" && phone=="" ){
+    //         alert("Field empty");
+    //    }else if(!pass === pass){
+    //     alert("Password not match");
+    //    }else{
+
+    //         const fetchData = async()=>{
+    //             const res = await fetch('http://localhost:8000/users',{
+    //                 headers: {'Content-Type': 'application/json'},
+    //                 method: 'POST',
+    //                 data:{
+    //                     username:username,
+    //                     password:pass,
+    //                     phone:phone,
+    //                     code:code,
+    //                     role:false                   
+    //                 }
+    //             }).then((response) => alert('success', response))
+    //                 .catch((error) => console.log(error))
+    //         }
+
+    //    }
+
+    // }
 
     return (
         <div className='header w-100'>
@@ -80,7 +80,7 @@ const Header = () => {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-           
+
 
 
             <Modal
@@ -147,14 +147,14 @@ const Header = () => {
 
                 <Modal.Body style={{ height: '700px' }}>
                     <h4 style={{ textAlign: 'center', marginBottom: '25px', }}>Đăng ký</h4>
-                    <div className='form2 ' onSubmit={register}>
+                    <div className='form2'>
                         <Form.Label htmlFor="sdt">Số điện thoại</Form.Label>
                         <Form.Control
                             type="text"
                             id="sdt"
                             aria-describedby="passwordHelpBlock"
-                            name='phone'
-                            onChange={(e)=>setPhone(e.target.value)}
+
+                        // onChange={(e) => setPhone(e.target.value)}
                         />
 
                         <Form.Label htmlFor="sdt">Tên hiển thị</Form.Label>
@@ -162,8 +162,8 @@ const Header = () => {
                             type="text"
                             id="username"
                             aria-describedby="passwordHelpBlock"
-                            name='username'
-                            onChange={(e)=>setUsername(e.target.value)}
+
+                        // onChange={(e) => setUsername(e.target.value)}
                         />
 
                         <Form.Label htmlFor="inputPassword5" style={{ marginTop: '10px' }}>Mật khẩu </Form.Label>
@@ -171,8 +171,8 @@ const Header = () => {
                             type="password"
                             id="inputPassword5"
                             aria-describedby="passwordHelpBlock"
-                            name='pass'
-                            onChange={(e)=>setPassWord(e.target.value)}
+
+                        // onChange={(e) => setPassWord(e.target.value)}
                         />
 
                         <Form.Label htmlFor="inputPassword5" style={{ marginTop: '10px' }}>Xác nhận mật khẩu</Form.Label>
@@ -181,15 +181,15 @@ const Header = () => {
                             id="inputPassword5"
                             aria-describedby="passwordHelpBlock"
                             name='confirm'
-                            onChange={(e)=>setPhone(e.target.value)}
+                            onChange={(e) => setPhone(e.target.value)}
                         />
 
                         <Form.Label htmlFor="sdt">Mã giới thiệu</Form.Label>
                         <Form.Control
                             type="text"
                             aria-describedby="passwordHelpBlock"
-                            name='code'
-                            onChange={(e)=>setCode(e.target.value)}
+                        // name='code'
+                        // onChange={(e) => setCode(e.target.value)}
                         />
                         <Form style={{ display: 'flex', marginTop: '10px' }}>
                             {['checkbox'].map((type) => (
@@ -217,7 +217,7 @@ const Header = () => {
 
             </Modal>
 
-        </div>
+        </div >
 
 
     )

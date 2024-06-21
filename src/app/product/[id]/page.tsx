@@ -9,9 +9,10 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/free-mode';
+import 'swiper/css/thumbs';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { useEffect,useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FreeMode, Thumbs } from 'swiper/modules';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -44,8 +45,9 @@ const Product = ({ params }: { params: { id: number } }) => {
         setFullscreen(breakpoint);
         setShow(true);
     }
-    const [thumbsSwiper, setThumbsSwiper] = useState(null);
-    
+    const handleClose = () => setShow(false);
+    const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
+
 
     return (
         <div>
@@ -56,7 +58,7 @@ const Product = ({ params }: { params: { id: number } }) => {
                             <Container>
                                 <Row>
                                     <Col lg={8} className="eight">
-                                        <img src={item.image1} width='100%' height={650} />
+                                        <img src={item.image1} width='100%' height={650} onClick={() => handleShow(values)} />
                                         <div className="title">
                                             <div className="name">
                                                 <p style={{ fontSize: '35px', width: '500px', fontWeight: 600 }}>{item.name}</p>
@@ -311,9 +313,9 @@ const Product = ({ params }: { params: { id: number } }) => {
                                         </div>
                                     </Col>
                                     <Col lg={4} className="ford">
-                                        <img src={item.image2} width='100%' height={220} />
-                                        <img src={item.image3} width='100%' height={220} />
-                                        <img src={item.image4} width='100%' height={220} />
+                                        <img src={item.image2} width='100%' height={220} onClick={() => handleShow(values)} />
+                                        <img src={item.image3} width='100%' height={220} onClick={() => handleShow(values)} />
+                                        <img src={item.image4} width='100%' height={220} onClick={() => handleShow(values)} />
 
                                         <div className="insurance">
                                             <Row>
@@ -743,79 +745,77 @@ const Product = ({ params }: { params: { id: number } }) => {
 
                             </div>
                             {/* zooommm                 */}
-                            <div className="zoom" >
+                            {/* <div className="zoom" >
 
-                                <Button className="me-2 mb-2" onClick={() => handleShow(values)}>
-                                    Full screen
-
-                                </Button>
-
-                                <Modal className='body' show={show} fullscreen={fullscreen} onHide={() => setShow(false)}>
-                                    <Modal.Header closeButton>
-
+                                <Modal show={show} fullscreen={fullscreen} onHide={() => setShow(false)}  >
+                                    <Modal.Header style={{ backgroundColor: 'rgba(12, 12, 12, .5)', border: 'none', zIndex: '1082', position: 'absolute', left: '0', top: '0', width: '100%', height: '50px' }}>
+                                        <a className="btn" style={{ color: 'white', fontSize: '22px', fontWeight: '500', position: 'relative', left: '1800px' }} onClick={handleClose} >X</a>
                                     </Modal.Header>
-                                    <Modal.Body style={{ backgroundColor: 'black'}}>
-                                        <div className='slide' >
-                                            <Swiper
 
-                                                loop={true}
-                                                spaceBetween={10}
-                                                navigation={true}
-                                                thumbs={{ swiper: thumbsSwiper }}
-                                                modules={[FreeMode, Navigation, Thumbs]}
-                                                className="mySwiper2"
-                                                style={{ position: 'relative', width: '1200px' }}>
-                                                <SwiperSlide>
-                                                    <img src={item.image1} width={1200} height={540} />
-                                                </SwiperSlide>
-                                                <SwiperSlide>
-                                                    <img src={item.image2} width={1200} height={700} />
-                                                </SwiperSlide>
-                                                <SwiperSlide>
-                                                    <img src={item.image3} width={1200} height={700} />
-                                                </SwiperSlide>
-                                                <SwiperSlide>
-                                                    <img src={item.image4} width={1200} height={700} />
-                                                </SwiperSlide>
-                                            </Swiper>
-                                            <Swiper
-                                                onSwiper={setThumbsSwiper}
-                                                loop={true}
-                                                spaceBetween={30}
-                                                slidesPerView={15}
-                                                freeMode={true}
-                                                watchSlidesProgress={true}
-                                                modules={[FreeMode, Navigation, Thumbs]}
-                                                className="mySwiper"
-                                                style={{ height: '200px'}}>
-                                                <SwiperSlide style={{ width: '120px', borderRadius: '10px', top: '7px' }}>
-                                                    <img  src={item.image1} width={120} height={100} style={{ border: '1px solid white', borderRadius: '10px' }} />
-                                                </SwiperSlide>
-                                                <SwiperSlide style={{ width: '120px', borderRadius: '20px', top: '7px' }}>
-                                                    <img  src={item.image2} width={120} height={100} style={{ border: '1px solid white', borderRadius: '10px', marginBottom: '-40px' }} />
-                                                </SwiperSlide>
-                                                <SwiperSlide style={{ width: '120px', borderRadius: '20px', top: '7px' }}>
-                                                    <img  src={item.image3} width={120} height={100} style={{ border: '1px solid white', borderRadius: '10px', marginBottom: '-40px' }} />
-                                                </SwiperSlide>
-                                                <SwiperSlide style={{ width: '120px', borderRadius: '20px', top: '7px' }}>
-                                                    <img  src={item.image4} width={120} height={100} style={{ border: '1px solid white', borderRadius: '10px', marginBottom: '-40px' }} />
-                                                </SwiperSlide>
-                                                    </Swiper>
-                                                </div>
-                                            </Modal.Body>
-                                        </Modal>
+                                    <Modal.Body style={{ backgroundColor: 'black' }}>
+                                        <div className="custom-pre">
+                                            <div className="swiper-button-next"><i className="bi bi-arrow-right-circle-fill"></i></div>
+                                            <div className="swiper-button-prev"><i className="bi bi-arrow-left-circle-fill"></i></div>
+                                        </div>
+                                        <Swiper
 
-                                </div>              
+                                            loop={true}
+                                            spaceBetween={10}
+                                            navigation={{
+                                                nextEl: '.swiper-button-next',
+                                                prevEl: '.swiper-button-prev',
+                                            }}
+                                            thumbs={{ swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null }}
+                                            modules={[FreeMode, Navigation, Thumbs]}
+                                            className="mySwiper2"
+                                            style={{ position: 'relative', width: '1100px', height: '750px', bottom: '16px' }}>
+                                            <SwiperSlide>
+                                                <img src={item.image1} width={1100} height={750} />
+                                            </SwiperSlide>
+                                            <SwiperSlide>
+                                                <img src={item.image2} width={1200} height={750} />
+                                            </SwiperSlide>
+                                            <SwiperSlide>
+                                                <img src={item.image3} width={1200} height={750} />
+                                            </SwiperSlide>
+                                            <SwiperSlide>
+                                                <img src={item.image4} width={1200} height={750} />
+                                            </SwiperSlide>
+                                        </Swiper>
+                                        <Swiper
+                                            onSwiper={setThumbsSwiper}
+                                            loop={true}
+                                            spaceBetween={30}
+                                            slidesPerView={15}
+                                            freeMode={true}
+                                            watchSlidesProgress={true}
+                                            modules={[FreeMode, Navigation, Thumbs]}
+                                            className="mySwiper"
+                                            style={{ height: '200px' }}>
+                                            <SwiperSlide style={{ width: '120px', borderRadius: '10px', top: '7px' }}>
+                                                <img src={item.image1} width={120} height={100} style={{ border: '1px solid white', borderRadius: '10px' }} />
+                                            </SwiperSlide>
+                                            <SwiperSlide style={{ width: '120px', borderRadius: '20px', top: '7px' }}>
+                                                <img src={item.image2} width={120} height={100} style={{ border: '1px solid white', borderRadius: '10px', marginBottom: '-40px' }} />
+                                            </SwiperSlide>
+                                            <SwiperSlide style={{ width: '120px', borderRadius: '20px', top: '7px' }}>
+                                                <img src={item.image3} width={120} height={100} style={{ border: '1px solid white', borderRadius: '10px', marginBottom: '-40px' }} />
+                                            </SwiperSlide>
+                                            <SwiperSlide style={{ width: '120px', borderRadius: '20px', top: '7px' }}>
+                                                <img src={item.image4} width={120} height={100} style={{ border: '1px solid white', borderRadius: '10px', marginBottom: '-40px' }} />
+                                            </SwiperSlide>
+                                        </Swiper>
+
+                                    </Modal.Body>
+
+                                </Modal>
+
+                            </div> */}
                         </div >
-                       
-                        
                     )
                 }
             })}
-        </div>
+        </div >
     )
 }
 export default Product;
-// export default function Product({ params }: { params: { id: number } }) {
-//     return <div>My Post: {params.id}</div>
-// }
