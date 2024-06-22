@@ -33,11 +33,11 @@ const ListCar = () => {
                 <div className="grid-container">
                     {list?.map((l) => {
                         return (
-                            <Card key={l.id} style={{ width: '310px', height: '24rem' }}>
+                            <Card key={l.id} style={{ width: '310px', height: '25rem' }}>
                                 <Card.Body>
                                     <Card.Subtitle className="mb-2 text-muted ">
                                         <Link href={`product/${l.id}`}>
-                                            <img src={l.image} width={276} height={210} />
+                                            <img src={l.image} width={282} height={210} style={{ position: 'relative', right: '10px' }} />
                                         </Link>
                                         <div className="fast">
                                             <p>Đặt xe nhanh</p>
@@ -66,7 +66,7 @@ const ListCar = () => {
                                         <Col md={1}></Col>
                                     </Row>
                                     <p style={{ fontSize: '20px', fontWeight: '600', marginTop: '-100px', textAlign: 'center' }}>{l.name}</p>
-                                    <p style={{ fontSize: '15px', marginTop: '-13px' }}><i className="bi bi-geo-alt"></i> &nbsp;Quận Bình Thạnh, TP.Hồ Chí Minh</p>
+                                    <p style={{ fontSize: '14px', marginTop: '-13px' }}><i className="bi bi-geo-alt"></i> &nbsp;Quận Bình Thạnh, TP.Hồ Chí Minh</p>
 
                                     <hr style={{ marginTop: '-10px' }} />
                                     <div style={{ fontSize: '13px', display: 'flex', marginTop: '-8px' }}>

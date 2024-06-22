@@ -15,20 +15,23 @@ import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useEffect } from 'react';
 import Link from "next/link";
-import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 const MainChild1 = () => {
-    const router = useRouter();
+
 
     const [data, setData] = useState(null)
     const [isLoading, setLoading] = useState(true)
-
     useEffect(() => {
         const fetchData = async () => {
             const res = await fetch(
                 "http://localhost:8000/products");
             const data = await res.json();
-            setData(data);
+            const limit = [];
+            for (let i = 0; i < 8; i++) {
+                limit.push(data[i])
+            }
+            setData(limit);
         };
         fetchData();
     }, []);
@@ -61,36 +64,63 @@ const MainChild1 = () => {
                         <p className='three'>Trải nghiệm sự khác biệt từ <span>hơn 8000</span> xe gia đình đời mới khắp Việt Nam</p>
                     </div>
                     <div className='nav-pill'>
-                        <Nav variant="pills">
-
+                        <Nav variant="pills" defaultActiveKey="/main-child1">
                             <Nav.Item className='nav-pill-c' style={{ borderRadius: '10px 0px 0px 0px' }}>
-                                <Link className="nav-link" href='/' style={{ textDecoration: 'none', color: 'white' }}>
-                                    <i className="bi bi-car-front-fill"></i>&nbsp;Xe tự lái
-                                </Link>
-
+                                <Nav.Link as='li' className='nav-link' eventKey="link-1">
+                                    <Link href='/main-child1' style={{ textDecoration: 'none', color: 'rgb(90, 88, 88)', fontSize: '16px', fontWeight: 700, }}>
+                                        <i className="bi bi-car-front-fill"></i>&nbsp;Xe tự lái
+                                    </Link>
+                                </Nav.Link>
                             </Nav.Item>
                             <Nav.Item className='nav-pill-c'>
-
-                                <Link className='nav-link' href='/main-child2' style={{ textDecoration: 'none', color: 'white' }}>
-                                    <i className="bi bi-bus-front-fill"></i>
-                                    &nbsp;Xe có tài xế
-                                </Link>
-
+                                <Nav.Link className='nav-link' as='li' eventKey="link-2">
+                                    <Link href='/main-child2' style={{ textDecoration: 'none', color: 'rgb(90, 88, 88)', fontSize: '16px', fontWeight: 700 }}>
+                                        <i className="bi bi-bus-front-fill"></i>
+                                        &nbsp;Xe có tài xế
+                                    </Link>
+                                </Nav.Link>
                             </Nav.Item>
                             <Nav.Item className='nav-pill-c' style={{ borderRadius: '0px 10px 0px 0px' }}>
+                                <Nav.Link className='nav-link' as='li' eventKey="link-3">
+                                    <Link href='/main-child3' style={{ textDecoration: 'none', color: 'rgb(90, 88, 88)', fontSize: '16px', fontWeight: 700 }} >
+                                        <i className="bi bi-bus-front-fill"></i>
+                                        &nbsp;Thuê xe dài hạn;
 
-                                <Link className='nav-link' href='/main-child3' style={{ textDecoration: 'none', color: 'white' }} >
-                                    <i className="bi bi-bus-front-fill"></i>
-                                    &nbsp;Thuê xe dài hạn
-                                </Link>
-
+                                    </Link>
+                                </Nav.Link>
                             </Nav.Item>
 
                         </Nav>
+                        {/* <Nav variant="pills">
+                            <Nav.Item className='nav-pill-c' style={{ borderRadius: '10px 0px 0px 0px' }}>
+                                <Nav.Link as='nav-link' className='lin'>
+                                    <Link href='/' style={{ textDecoration: 'none', color: 'white' }}>
+                                        <i className="bi bi-car-front-fill"></i>&nbsp;Xe tự lái
+                                    </Link>
+                                </Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item className='nav-pill-c'>
+                                <Nav.Link as='nav-link' className='lin'>
+                                    <Link href='/main-child2' style={{ textDecoration: 'none', color: 'white' }}>
+                                        <i className="bi bi-bus-front-fill"></i>
+                                        &nbsp;Xe có tài xế
+                                    </Link>
+                                </Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item className='nav-pill-c' style={{ borderRadius: '0px 10px 0px 0px' }}>
+                                <Nav.Link as='nav-link' className='lin'>
+                                    <Link href='/main-child3' style={{ textDecoration: 'none', color: 'white' }} >
+                                        <i className="bi bi-bus-front-fill"></i>
+                                        &nbsp;Thuê xe dài hạn
+                                    </Link>
+                                </Nav.Link>
+                            </Nav.Item>
+
+                        </Nav> */}
 
                     </div>
                 </div>
-            </Container>
+            </Container >
             <Container>
                 <div className='main-header bg-light'>
                     <Row>
@@ -171,51 +201,69 @@ const MainChild1 = () => {
                         <h1 style={{ fontWeight: '700' }}>Xe dành cho bạn</h1>
                     </div>
                     <Row className='card-e'>
+
                         {data?.map((item) => {
+
                             return (
+
                                 <Col key={item.id}>
-                                    <Card style={{ width: '19rem', marginBottom: '60px', height: '29rem' }}>
+                                    <Card style={{ width: '19rem', marginBottom: '60px', height: '25rem', marginTop: '1px' }}>
                                         <Card.Body>
 
                                             <Card.Subtitle className="mb-2 text-muted ">
+
                                                 <Link href={`/product/${item.id}`}>
-                                                    <img src={item.image} width={270} height={240} />
+                                                    <img src={item.image} width={280} height={220} />
                                                 </Link>
+                                                <div className="fast">
+                                                    <p>Đặt xe nhanh</p>
+                                                    <Image src='/img/storm.png' width={20} height={17} alt="" style={{ left: '5px', top: '1px' }} />
+                                                </div>
+                                                <div className="like">
+                                                    <Image src='/img/heart.png' width={20} height={17} alt="" style={{ left: '1px', top: '1px' }} />
+                                                </div>
+                                                <div className="logo">
+                                                    <img src='https://n1-astg.mioto.vn/g/2023/00/23/22/-kwISjxUWB2J-t98nNtLMQ.jpg' width={40} height={40} alt="" style={{ borderRadius: '100%' }} />
+                                                </div>
+                                                <div className="discount">
+                                                    <span>Giảm {item.discount * 100}%</span>
+                                                </div>
                                             </Card.Subtitle>
 
-                                            <Row className='mt-3'>
-                                                <Col md={5} style={{ backgroundColor: '#eef7ff', borderRadius: '10px', height: '30px', textAlign: 'center' }}>
+                                            <Row className='number'>
+                                                <Col md={5} style={{ backgroundColor: '#eef7ff', borderRadius: '10px', height: '25px', textAlign: 'center' }}>
                                                     <p>Số tự động</p>
                                                 </Col>
                                                 &nbsp;
-                                                <Col md={6} style={{ backgroundColor: '#dff5e7', borderRadius: '10px', height: '30px', textAlign: 'center' }}>
+                                                <Col md={6} style={{ backgroundColor: '#dff5e7', borderRadius: '10px', height: '25px', textAlign: 'center' }}>
                                                     <p>Giao xe tận nơi</p>
                                                 </Col>
                                                 <Col md={1}></Col>
                                             </Row>
                                             {/* href={`/product/${item.id}`} */}
                                             <Link href={`/product/${item.id}`} style={{ textDecoration: "none", color: 'black' }}>
-                                                <p style={{ fontSize: '22px', fontWeight: '600', marginTop: '10px', textAlign: 'center' }}>
+                                                <p style={{ fontSize: '22px', fontWeight: '600', marginTop: '-110px', textAlign: 'center' }}>
                                                     {item.name}
                                                 </p>
                                             </Link>
-                                            <p><i className="bi bi-geo-alt"></i> &nbsp;Quận Bình Thạnh, TP.Hồ Chí Minh</p>
+                                            <p style={{ marginTop: '-15px' }}><i className="bi bi-geo-alt"></i> &nbsp;Quận Bình Thạnh, TP.Hồ Chí Minh</p>
 
                                             <hr />
-                                            <div>
+                                            <div className='foot'>
                                                 <i className="bi bi-star-fill" style={{ display: 'inline-block', color: 'orange' }}></i> 5.0&nbsp;&nbsp;
                                                 <i className="bi bi-suitcase-fill" style={{ display: 'inline-block', color: '#5fcf86' }}></i>39 chuyến
                                                 <del style={{ marginLeft: '10px', fontWeight: '500', color: 'gray' }}>{item.price}k</del>
-                                                <span style={{ color: '#5fcf86', fontWeight: '500', fontSize: '20px', marginLeft: '3px' }}>{item.price - (item.price * item.discount)}K</span>/ngày
+                                                <span style={{ color: '#5fcf86', fontWeight: '500', fontSize: '18px', marginLeft: '5px' }}>{item.price - (item.price * item.discount)}K</span>/ngày
                                             </div>
                                         </Card.Body>
                                     </Card>
                                 </Col>
                             )
+
                         })}
 
                     </Row>
-                    <Row className='card-e'>
+                    {/* <Row className='card-e'>
                         <Col>
                             <Card style={{ width: '19rem', marginBottom: '60px', height: '29rem' }}>
                                 <Card.Body>
@@ -348,7 +396,7 @@ const MainChild1 = () => {
                                 </Card.Body>
                             </Card>
                         </Col>
-                    </Row>
+                    </Row> */}
                 </Container>
             </div>
             <div className='checkin'>
@@ -774,7 +822,7 @@ const MainChild1 = () => {
                 </Container>
 
             </div>
-        </div>
+        </div >
 
     )
 }

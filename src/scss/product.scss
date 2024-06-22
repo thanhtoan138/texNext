@@ -1,5 +1,5 @@
 .product {
-    height: 3917px;
+    height: 4150px;
 
     .eight {
         margin-top: 45px;
@@ -342,8 +342,8 @@
     .choose {
         background-color: #f8f4f4;
         margin-top: 50px;
-        height: 600px;
-        margin-bottom: -50px;
+        height: 710px;
+
 
         img {
             border-radius: 20px;
@@ -367,7 +367,7 @@
         .like {
             position: relative;
             bottom: 260px;
-            left: 260px;
+            left: 250px;
             // margin-left: 5px;
             width: 33px;
             padding: 6px;
@@ -410,36 +410,36 @@
 
 }
 
-// .zoom {
-//     .custom-pre {
-//         --swiper-navigation-size: 20px;
+.custom-pres {
+    --swiper-navigation-size: 20px;
 
-//         .swiper-button-next {
-//             color: rgb(49, 49, 49);
-//             padding: 20px;
-//             border-radius: 100%;
+    .swiper-button-next {
+        color: rgb(49, 49, 49);
+        padding: 20px;
+        border-radius: 100%;
+        right: 30px;
 
-//             i {
-//                 font-size: 50px;
-//                 color: white;
-//             }
-//         }
+        i {
+            font-size: 50px;
+            color: white;
+        }
+    }
 
 
-//         .swiper-button-prev {
-//             color: rgb(49, 49, 49);
+    .swiper-button-prev {
+        color: rgb(49, 49, 49);
+        left: 50px;
+        border-radius: 100%;
 
-//             border-radius: 100%;
 
-//             i {
-//                 font-size: 50px;
-//                 color: white;
-//             }
-//         }
+        i {
+            font-size: 50px;
+            color: white;
+        }
+    }
 
-//         .swiper-button-next::after,
-//         .swiper-button-prev::after {
-//             content: "";
-//         }
-//     }
-//}
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        content: "";
+    }
+}

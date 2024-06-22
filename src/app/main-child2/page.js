@@ -32,29 +32,30 @@ const MainChild2 = () => {
                         <p className='three'>Trải nghiệm sự khác biệt từ <span>hơn 8000</span> xe gia đình đời mới khắp Việt Nam</p>
                     </div>
                     <div className='nav-pill'>
-                        <Nav variant="pills">
-
+                        <Nav variant="pills" defaultActiveKey="/main-child1">
                             <Nav.Item className='nav-pill-c' style={{ borderRadius: '10px 0px 0px 0px' }}>
-                                <Link className="nav-link" href='/' style={{ textDecoration: 'none', color: 'white' }}>
-                                    <i className="bi bi-car-front-fill"></i>&nbsp;Xe tự lái
-                                </Link>
-
+                                <Nav.Link as='li' className='nav-link' eventKey="link-1">
+                                    <Link href='/main-child1' style={{ textDecoration: 'none', color: 'rgb(90, 88, 88)', fontSize: '16px', fontWeight: 700, }}>
+                                        <i className="bi bi-car-front-fill"></i>&nbsp;Xe tự lái
+                                    </Link>
+                                </Nav.Link>
                             </Nav.Item>
                             <Nav.Item className='nav-pill-c'>
-
-                                <Link className='nav-link' href='/main-child2' style={{ textDecoration: 'none', color: 'white' }}>
-                                    <i className="bi bi-bus-front-fill"></i>
-                                    &nbsp;Xe có tài xế
-                                </Link>
-
+                                <Nav.Link className='nav-link' as='li' eventKey="link-2">
+                                    <Link href='/main-child2' style={{ textDecoration: 'none', color: 'rgb(90, 88, 88)', fontSize: '16px', fontWeight: 700 }}>
+                                        <i className="bi bi-bus-front-fill"></i>
+                                        &nbsp;Xe có tài xế
+                                    </Link>
+                                </Nav.Link>
                             </Nav.Item>
                             <Nav.Item className='nav-pill-c' style={{ borderRadius: '0px 10px 0px 0px' }}>
+                                <Nav.Link className='nav-link' as='li' eventKey="link-3">
+                                    <Link href='/main-child3' style={{ textDecoration: 'none', color: 'rgb(90, 88, 88)', fontSize: '16px', fontWeight: 700 }} >
+                                        <i className="bi bi-bus-front-fill"></i>
+                                        &nbsp;Thuê xe dài hạn;
 
-                                <Link className='nav-link' href='/main-child3' style={{ textDecoration: 'none', color: 'white' }} >
-                                    <i className="bi bi-bus-front-fill"></i>
-                                    &nbsp;Thuê xe dài hạn
-                                </Link>
-
+                                    </Link>
+                                </Nav.Link>
                             </Nav.Item>
 
                         </Nav>
@@ -97,16 +98,16 @@ const MainChild2 = () => {
                         <p style={{ textAlign: 'left', marginLeft: '26px', color: "gray" }}>Di chuyển nội thành hoặc lân cận, lộ trình tự do <i className="bi bi-patch-question"></i></p>
                         <Row>
                             <Col lg={11}>
-                                <i className="bi bi-geo-alt-fill" style={{ fontSize: '23px', marginRight: '547px', color: 'gray' }}>&nbsp;Tôi muốn đón tại...</i>
+                                <i className="bi bi-geo-alt-fill" style={{ fontSize: '20px', marginRight: '547px', color: 'gray' }}>&nbsp;Tôi muốn đón tại...</i>
                             </Col>
                             <Col lg={1}>
                                 <i className="bi bi-caret-down-fill" style={{ fontSize: "23px", marginRight: '20px', color: 'black' }}></i>
                             </Col>
                         </Row>
-                        <h4 style={{ textAlign: 'left', marginLeft: '24px', marginTop: '10px', marginBottom: '10px' }}>Thời gian</h4>
+                        <h6 style={{ textAlign: 'left', marginLeft: '20px', marginTop: '10px', marginBottom: '10px' }}>Thời gian</h6>
                         <Row>
                             <Col lg={9}>
-                                <i className="bi bi-calendar-check" style={{ marginRight: '230px', fontSize: "20px", fontWeight: '500' }}> &nbsp;&nbsp;08:00, 11/06/2024 - 10:00, 11/06/2024</i>
+                                <i className="bi bi-calendar-check" style={{ marginRight: '230px', fontSize: "18px", fontWeight: '500' }}> &nbsp;&nbsp;08:00, 11/06/2024 - 10:00, 11/06/2024</i>
                             </Col>
                             <Col lg={3}>
                                 <p>
