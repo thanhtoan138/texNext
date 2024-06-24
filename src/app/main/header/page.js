@@ -7,7 +7,7 @@ import '../../../scss/header.scss';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import Register from '../../component/_register/page';
-
+import SignIn from '../../component/_signin/page';
 
 const Header = () => {
     const [show, setShow] = useState(false);
@@ -66,9 +66,10 @@ const Header = () => {
 
                 <Modal.Body>
 
-                    <h4 style={{ textAlign: 'center', marginBottom: '25px' }}>Đăng nhập</h4>
-                    <div className='form'>
-                        <Form.Label htmlFor="sdt">Số điện thoại hoặc email</Form.Label>
+                 
+                  
+                        <SignIn />
+                        {/* <Form.Label htmlFor="sdt">Số điện thoại hoặc email</Form.Label>
                         <Form.Control
                             type="text"
                             id="sdt"
@@ -89,9 +90,9 @@ const Header = () => {
                         <div className='equal'>
                             <a className='fb btn'><img src='https://nhanhtravel.com/wp-content/uploads/2022/12/TS-FB-Icon1-e1670787566310.png' width={18} /> Facebook</a>
                             <a className='gg btn'><img src='https://cdn.pixabay.com/photo/2021/05/24/09/15/google-logo-6278331_960_720.png' width={18} /> Google</a>
-                        </div>
+                        </div> */}
 
-                    </div>
+                  
                 </Modal.Body>
 
             </Modal>

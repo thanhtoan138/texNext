@@ -2,8 +2,8 @@
 import React, { useState } from 'react'
 import { Form, FormGroup } from 'react-bootstrap';
 import { createUser } from '../_register/action';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { toast,ToastContainer } from 'react-toastify';
+
 
 export default function Register() {
 
@@ -19,8 +19,7 @@ export default function Register() {
     }
     return (
         <div className='form2' style={{ marginTop: '-20px' }}>
-
-            <ToastContainer />
+             <ToastContainer/>
             <h4 style={{ textAlign: 'center' }}>Đăng ký</h4>
             <Form action={createUser}>
                 <Form.Group className="mb-3">
@@ -59,7 +58,7 @@ export default function Register() {
                         và <span style={{ fontWeight: '500', color: '#5fcf86' }}>Chính sách bảo vệ dữ liệu cá nhân</span> của Mioto
                     </p>
                 </Form.Group>
-                <button className='dk btn' type='submit' style={{ paddingBottom: '15px' }}>Đăng ký</button>
+                <button className='dk btn' type='submit' onClick={handleConfirm} style={{ paddingBottom: '15px' }}>Đăng ký</button>
                 <div className='equal'>
                     <a className='fb btn'><img src='https://nhanhtravel.com/wp-content/uploads/2022/12/TS-FB-Icon1-e1670787566310.png' width={18} /> Facebook</a>
                     <a className='gg btn'><img src='https://cdn.pixabay.com/photo/2021/05/24/09/15/google-logo-6278331_960_720.png' width={18} /> Google</a>
