@@ -35,14 +35,14 @@ const MainChild2 = () => {
                         <Nav variant="pills" defaultActiveKey="/main-child1">
                             <Nav.Item className='nav-pill-c' style={{ borderRadius: '10px 0px 0px 0px' }}>
                                 <Nav.Link as='li' className='nav-link' eventKey="link-1">
-                                    <Link href='/main-child1' style={{ textDecoration: 'none', color: 'rgb(90, 88, 88)', fontSize: '16px', fontWeight: 700, }}>
+                                    <Link href='/main-child1' style={{ textDecoration: 'none', color: 'rgb(90, 88, 88)', fontSize: '22px', fontWeight: 700, }}>
                                         <i className="bi bi-car-front-fill"></i>&nbsp;Xe tự lái
                                     </Link>
                                 </Nav.Link>
                             </Nav.Item>
                             <Nav.Item className='nav-pill-c'>
                                 <Nav.Link className='nav-link' as='li' eventKey="link-2">
-                                    <Link href='/main-child2' style={{ textDecoration: 'none', color: 'rgb(90, 88, 88)', fontSize: '16px', fontWeight: 700 }}>
+                                    <Link href='/main-child2' style={{ textDecoration: 'none', color: 'rgb(90, 88, 88)', fontSize: '22px', fontWeight: 700 }}>
                                         <i className="bi bi-bus-front-fill"></i>
                                         &nbsp;Xe có tài xế
                                     </Link>
@@ -50,7 +50,7 @@ const MainChild2 = () => {
                             </Nav.Item>
                             <Nav.Item className='nav-pill-c' style={{ borderRadius: '0px 10px 0px 0px' }}>
                                 <Nav.Link className='nav-link' as='li' eventKey="link-3">
-                                    <Link href='/main-child3' style={{ textDecoration: 'none', color: 'rgb(90, 88, 88)', fontSize: '16px', fontWeight: 700 }} >
+                                    <Link href='/main-child3' style={{ textDecoration: 'none', color: 'rgb(90, 88, 88)', fontSize: '22px', fontWeight: 700 }} >
                                         <i className="bi bi-bus-front-fill"></i>
                                         &nbsp;Thuê xe dài hạn;
 
@@ -115,7 +115,7 @@ const MainChild2 = () => {
                                     <button style={{
                                         color: 'white', backgroundColor: '#5fcf86', height: '50px',
                                         border: '1px solid white', borderRadius: '10px', width: '70px', fontWeight: '500'
-                                    }}>Tìm xe</button>
+                                    }}><Link href='/list-car' style={{ textDecoration: 'none', color: 'white' }}>Tìm xe</Link></button>
                                 </p>
                             </Col>
                         </Row>
