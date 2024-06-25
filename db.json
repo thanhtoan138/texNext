@@ -275,22 +275,6 @@
       "bonse": "23/10/1998",
       "role": true,
       "code": ""
-    },
-    {
-      "id": "aa43",
-      "username": "asd1",
-      "phone": "0392926303",
-      "password": "123",
-      "code": "d1",
-      "role": false
-    },
-    {
-      "id": "5c90",
-      "username": "123e",
-      "phone": "123312",
-      "password": "1223",
-      "code": "",
-      "role": false
     }
   ]
 }

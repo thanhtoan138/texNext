@@ -7,7 +7,7 @@ import '../../../scss/header.scss';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import Register from '../../component/_register/page';
-import SignIn from '../../component/_signin/page';
+import SignIn from '../../component/_signin/page.tsx';
 
 const Header = () => {
     const [show, setShow] = useState(false);
@@ -66,10 +66,10 @@ const Header = () => {
 
                 <Modal.Body>
 
-                 
-                  
-                        <SignIn />
-                        {/* <Form.Label htmlFor="sdt">Số điện thoại hoặc email</Form.Label>
+
+
+                    <SignIn />
+                    {/* <Form.Label htmlFor="sdt">Số điện thoại hoặc email</Form.Label>
                         <Form.Control
                             type="text"
                             id="sdt"
@@ -92,7 +92,7 @@ const Header = () => {
                             <a className='gg btn'><img src='https://cdn.pixabay.com/photo/2021/05/24/09/15/google-logo-6278331_960_720.png' width={18} /> Google</a>
                         </div> */}
 
-                  
+
                 </Modal.Body>
 
             </Modal>
