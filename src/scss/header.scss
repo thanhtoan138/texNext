@@ -92,7 +92,14 @@
 }
 
 .form {
-    height: 360px;
+    height: 450px;
+
+    h4 {
+        text-align: center;
+        font-weight: 600;
+        margin-bottom: 30px;
+
+    }
 
     .dn {
         background-color: #5fcf86;
@@ -100,7 +107,9 @@
         font-weight: 500;
         width: 465px;
         color: rgb(231, 231, 229);
-        font-size: 15px;
+        font-size: 20px;
+        border: none;
+        border-radius: 6px;
     }
 
     .equal {

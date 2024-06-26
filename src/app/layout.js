@@ -2,12 +2,10 @@ import { Inter } from "next/font/google";
 import Footer from "./main/footer/page";
 import Header from "./main/header/page";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "react-toastify/dist/ReactToastify.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import "react-toastify/dist/ReactToastify.min.css";
 import { ToastContainer } from 'react-toastify';
 
-
-// Be sure to include styles at some point, probably during your bootstraping
-// import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -21,7 +19,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <Header />
         {children}
-
+        <ToastContainer />
         <Footer />
       </body>
     </html>
