@@ -8,8 +8,9 @@ import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import Register from '../../component/_register/page';
 // import SignIn from '../../component/_signin/page.tsx';
-import { useRouter } from "next/navigation"
+import { useRouter, redirect } from "next/navigation"
 import { toast } from 'react-toastify';
+
 const Header = () => {
     const router = useRouter()
     const [phone, setPhone] = useState('');
@@ -20,23 +21,46 @@ const Header = () => {
     const handleCloseRegister = () => setShowRegister(false);
     const handleShow = () => setShow(true);
     const handleShowRegister = () => setShowRegister(true);
-
+    const [account, setAccount] = useState('');
+    const [user, setUser] = useState(null);
+    useEffect(() => {
+        const u = localStorage.getItem('user');
+        const value = !!u ? JSON.parse(u) : undefined;
+        return setUser(value);
+    }, [user])
+    const handleLogout = () => {
+        const x = localStorage.removeItem('user');
+        setUser(x);
+        return router.push('/main-child1')
+    }
+ 
     async function handleLogin(e) {
+
         e.preventDefault();
         try {
+
             const response = await fetch('http://localhost:8000/users');
             const data = await response.json();
             // Handle response if necessary
+
             data?.map((u) => {
-                if (u.phone === phone && +u.password === +password) {
-                    toast.success('Đăng nhập thành công!');
-                    localStorage.setItem('user', JSON.stringify(u));
-                    setShow(false);
-                    return router.push('/main-child1')
-                } else {
-                    toast.error('Sai tên đăng nhập hoặc mật khẩu!');
+                if (+u.phone === +phone && +u.password === +password) {
+                    setAccount(JSON.stringify(u))
                 }
+
             });
+            if (account) {
+                toast.success('Đăng nhập thành công!');
+                localStorage.setItem('user', account);
+                setShow(false);
+                return router.push('/my-car');
+
+
+            } else {
+                toast.error('Sai tên đăng nhập hoặc mật khẩu!');
+
+            }
+
         } catch (error) {
             // Handle error if necessary
             console.error(error)
@@ -63,12 +87,35 @@ const Header = () => {
                         <Navbar.Text className='ntext'>
                             <span>|</span>
                         </Navbar.Text>
-                        <Navbar.Text className='ntext'>
-                            <a onClick={handleShowRegister}>Đăng ký</a>
-                        </Navbar.Text>
-                        <Navbar.Text >
-                            <a className='dn btn' onClick={handleShow}>Đăng nhập</a>
-                        </Navbar.Text>
+
+
+                        {!user && (
+                            <>
+                                <Navbar.Text className='ntext'>
+                                    <a onClick={handleShowRegister}>Đăng ký</a>
+                                </Navbar.Text>
+                                <Navbar.Text >
+                                    <a className='dn btn' onClick={handleShow}>Đăng nhập</a>
+                                </Navbar.Text>
+                            </>
+                        )}
+                        {user && (
+                            <>
+                                <Navbar.Text className='ntext'>
+                                    <Link href='/infor' style={{ textDecoration: 'none', color: '#5fcf86' }}>{user.username}</Link>
+                                </Navbar.Text>
+                                <Navbar.Text className='ntext'>
+                                    <a className='dn btn' onClick={handleLogout}>Đăng Xuất</a>
+                                </Navbar.Text>
+
+                            </>
+                        )}
+
+
+
+
+
+
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

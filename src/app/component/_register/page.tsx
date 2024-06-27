@@ -5,10 +5,11 @@ import { Form, FormGroup } from 'react-bootstrap';
 import { toast } from 'react-toastify';
 import { FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
-
 export default function Register() {
-    const router = useRouter();
+    // const router = useRouter();
+
     async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+
         try {
             const formData = new FormData(event.currentTarget);
             const rawFormData = {
@@ -20,7 +21,10 @@ export default function Register() {
                 role: Boolean(formData.get('false'))
             }
             if (rawFormData.confirm != rawFormData.password) {
-                toast.error("Password không khớp !");
+                alert('Password không khớp !')
+
+                // toast.error("Password không khớp !",)
+
             } else {
                 const response = await fetch(`http://localhost:8000/users`, {
                     method: 'POST',
@@ -32,9 +36,10 @@ export default function Register() {
                 if (!response.ok) {
                     throw new Error('response fail')
                 } else {
-                    toast.info("Đăng ký thành công !");
-                    router.push('/main-child1')
-                    router.refresh();
+                    // toast.info("Đăng ký thành công !");
+                    alert('Đăng ký thành công')
+
+
                 }
             }
         } catch (error) {

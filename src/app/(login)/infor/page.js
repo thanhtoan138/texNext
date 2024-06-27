@@ -14,20 +14,20 @@ import { useEffect, useState } from 'react';
 const Infor = () => {
     const [user, setUsers] = useState(null);
     useEffect(() => {
-        fetch('http://localhost:8000/users')
-            .then((res) => res.json())
-            .then((data) => {
-                setUsers(data)
-            })
-    })
+        const u = localStorage.getItem('user');
+        const value = !!u ? JSON.parse(u) : undefined;
+        setUsers(value);
+    }, [])
 
 
     return (
+
         <div className="account">
-            <div className="infor">
-                {user?.map((user) => {
-                    return (
-                        <Row key={user.id} >
+            {user && (
+                <>
+                    <div className="infor">
+
+                        <Row>
                             <Col lg={4}>
                                 <div className='title'>
                                     <h5>Thông tin tài khoản</h5>
@@ -37,13 +37,13 @@ const Infor = () => {
                                 <p style={{ fontWeight: 600, marginLeft: '45px' }}>{user.username}</p>
                                 <p style={{ fontSize: '13px', marginLeft: '15px' }}>Tham gia: 13/06/2024</p>
                                 <div className='marks'>
-                                    <Image src="/img/medal.png" width={25} height={25} />
+                                    <Image src="/img/medal.png" width={25} height={25} alt='' />
                                     <b>&nbsp;0 điểm</b>
                                 </div>
                             </Col>
                             <Col lg={8}>
 
-                                <div key={user.id}>
+                                <div>
                                     <div className='icon flex-container'>
                                         <p><i className="bi bi-suitcase-fill"></i>0</p>
                                         <span>&nbsp; Chuyến</span>
@@ -87,7 +87,7 @@ const Infor = () => {
                                             <Col md={1}></Col>
                                             <Col md={4} style={{ fontWeight: 500 }}>
                                                 <p style={{ marginLeft: '26px' }}>{user.phone} <i className="bi bi-pencil"></i></p>
-                                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{user.email}<i className="bi bi-pencil"></i></p>
+                                                <p style={{ marginLeft: '120px' }}>{user.email}<i className="bi bi-pencil"></i></p>
                                                 <p>&nbsp;&nbsp;&nbsp;Thêm liên kết <i className="bi bi-link-45deg"></i></p>
                                                 <p>&nbsp;&nbsp;&nbsp;Thêm liên kết <i className="bi bi-link-45deg"></i></p>
                                             </Col>
@@ -97,110 +97,121 @@ const Infor = () => {
                             </Col>
 
                         </Row>
-                    )
-                })}
-            </div>
 
-            <div className='gplx'>
-                <div className='title'>
-                    <h5>Giấy phép lái xe</h5>
-                    <div className='imgs'>
-                        <Image src='/img/dot.png' alt='' width={15} height={15} />
-                        <p>Chưa xác thực</p>
                     </div>
-                    <div className='edit'>
-                        <a>Chỉnh sửa <i className="bi bi-pencil"></i></a>
-                    </div>
-                </div>
-                <div className='note'>
-                    <p> <span style={{ fontWeight: 500 }}>Lưu ý: </span>để tránh phát sinh vấn đề trong quá trình thuê xe, <span style={{ textDecoration: 'underline' }}>người đặt xe </span>
-                        trên Mioto (đã xác thực GPLX) <span style={{ fontWeight: 500 }}>ĐỒNG THỜI</span> phải là <span style={{ textDecoration: 'underline' }}>người nhận xe.</span></p>
-                </div>
-                <Row className='update'>
-                    <Col lg={6}>
-                        <h5>Hình ảnh</h5>
-                        <div class="imageBox">
-                            <div class="imageInn">
-                                <Image src='/img/update.png' width={80} height={50} alt='' />
+
+                    <div className='gplx'>
+                        <div className='title'>
+                            <h5>Giấy phép lái xe</h5>
+                            <div className='imgs'>
+                                <Image src='/img/dot.png' alt='' width={15} height={15} />
+                                <p>Chưa xác thực</p>
                             </div>
-                            <div class="hoverImg">
-                                <Image src='/img/camera.png' width={80} height={50} alt='' />
+                            <div className='edit'>
+                                <a>Chỉnh sửa <i className="bi bi-pencil"></i></a>
                             </div>
                         </div>
+                        <div className='note'>
+                            <p> <span style={{ fontWeight: 500 }}>Lưu ý: </span>để tránh phát sinh vấn đề trong quá trình thuê xe, <span style={{ textDecoration: 'underline' }}>người đặt xe </span>
+                                trên Mioto (đã xác thực GPLX) <span style={{ fontWeight: 500 }}>ĐỒNG THỜI</span> phải là <span style={{ textDecoration: 'underline' }}>người nhận xe.</span></p>
+                        </div>
+                        <Row className='update'>
+                            <Col lg={6}>
+                                <h5>Hình ảnh</h5>
+                                <div className="imageBox">
+                                    <div className="imageInn">
+                                        <Image src='/img/update.png' width={80} height={50} alt='' />
+                                    </div>
+                                    <div className="hoverImg">
+                                        <Image src='/img/camera.png' width={80} height={50} alt='' />
+                                    </div>
+                                </div>
 
-                    </Col>
-                    <Col lg={6}>
-                        <h5>thông tin chung</h5>
-                        <Form.Label htmlFor="inputPassword5" className='mt-2' style={{ color: 'gray' }}>Số GPLX</Form.Label>
-                        <Form.Control
-                            type="text"
-                            id="inputPassword5"
-                            aria-describedby="passwordHelpBlock"
-                            placeholder='Nhập số GPLX đã cấp'
-                        />
-                        <Form.Label htmlFor="inputPassword5" className='mt-2' style={{ color: 'gray' }}>Họ và tên</Form.Label>
-                        <Form.Control
-                            type="text"
-                            id="inputPassword5"
-                            aria-describedby="passwordHelpBlock"
-                            placeholder='Nhập đầy đủ họ tên'
-                        />
-                        <Form.Label htmlFor="inputPassword5" className='mt-2' style={{ color: 'gray' }}>Ngày sinh</Form.Label>
-                        <Form.Control
-                            type="text"
-                            id="inputPassword5"
-                            aria-describedby="passwordHelpBlock"
-                            placeholder='Nhập ngày sinh'
-                        />
-                    </Col>
-                    <p style={{ fontSize: '12px' }}>Vì sao tôi phải xác thực GPLX ?</p>
-                </Row>
-            </div>
-            <div className='intro'>
-                <Row>
-                    <Col lg={4} className='title'>
-                        <h4>Giới thiệu bạn mới</h4>
-                        <p>Tìm hiểu chi tiết chương trình ?</p>
-                    </Col>
-                    <Col lg={8}>
-                        <img src='https://www.mioto.vn/static/media/banner.9bfc25cb.png' width={530} height={360} alt='' />
-                    </Col>
-                </Row>
-            </div>
-            <div className='cards'>
-                <div className='flex-container'>
-                    <p style={{ fontSize: '24px', fontWeight: 500 }}>Thẻ của tôi</p>
-                    <a className='btn'>Thêm thẻ <i className="bi bi-plus-circle"></i></a>
-                </div>
-                <img src='https://www.mioto.vn/static/media/my-card.c94c4868.svg' height={370} width={370} />
-                <p style={{ textAlign: 'center', fontSize: '24px', color: 'gray', fontWeight: 500 }}>Bạn chưa có thẻ nào</p>
-            </div>
+                            </Col>
+                            <Col lg={6}>
+                                <h5>thông tin chung</h5>
+                                <Form.Group>
+                                    <Form.Label className='mt-2' style={{ color: 'gray', }}>Số GPLX</Form.Label>
+                                    <Form.Control
+                                        type="text"
+                                        aria-describedby="passwordHelpBlock"
 
-            <div className='list-cards'>
-                <div className='flex-container'>
-                    <p style={{ fontSize: '24px', fontWeight: 500 }}>Danh sách xe</p>
-                    <div className='tax'>
+                                        style={{ color: 'gray', width: '385px' }}
+                                    />
 
+                                </Form.Group>
+                                <Form.Group>
+                                    <Form.Label className='mt-2' style={{ color: 'gray' }}>Họ và tên</Form.Label>
+                                    <Form.Control
+                                        type="text"
 
-                        <Tabs
-                            defaultActiveKey="profile"
-                            id="fill-tab-example"
-                            className="mb-3"
-                            variant="underline"
-                        >
-                            <Tab eventKey="home" title="Có tài xế">
-                            </Tab>
-                            <Tab eventKey="profile" title="Tự lái">
-                            </Tab>
-                        </Tabs>
+                                        aria-describedby="passwordHelpBlock"
 
+                                        style={{ color: 'gray', width: '385px' }}
+                                    />
+                                </Form.Group>
+                                <Form.Group>
+                                    <Form.Label className='mt-2' style={{ color: 'gray' }}>Ngày sinh</Form.Label>
+                                    <Form.Control
+                                        type="text"
+                                        aria-describedby="passwordHelpBlock"
+
+                                        style={{ color: 'gray', width: '385px' }}
+                                    />
+                                </Form.Group>
+
+                            </Col>
+                            <p style={{ fontSize: '12px' }}>Vì sao tôi phải xác thực GPLX ?</p>
+                        </Row>
+                    </div>
+                    <div className='intro'>
+                        <Row>
+                            <Col lg={4} className='title'>
+                                <h4>Giới thiệu bạn mới</h4>
+                                <p>Tìm hiểu chi tiết chương trình ?</p>
+                            </Col>
+                            <Col lg={8}>
+                                <img src='https://www.mioto.vn/static/media/banner.9bfc25cb.png' width={530} height={360} alt='' />
+                            </Col>
+                        </Row>
+                    </div>
+                    <div className='cards'>
+                        <div className='flex-container'>
+                            <p style={{ fontSize: '24px', fontWeight: 500 }}>Thẻ của tôi</p>
+                            <a className='btn'>Thêm thẻ <i className="bi bi-plus-circle"></i></a>
+                        </div>
+                        <img src='https://www.mioto.vn/static/media/my-card.c94c4868.svg' height={370} width={370} />
+                        <p style={{ textAlign: 'center', fontSize: '24px', color: 'gray', fontWeight: 500 }}>Bạn chưa có thẻ nào</p>
                     </div>
 
-                </div>
-                <img src='https://www.mioto.vn/static/media/empty-mycar.e023e681.svg' height={370} width={370} />
-                <p style={{ fontSize: '24px', color: 'gray', fontWeight: 500, marginLeft: '350px' }}>Không tìm thấy xe nào.</p>
-            </div>
-        </div >
+                    <div className='list-cards'>
+                        <div className='flex-container'>
+                            <p style={{ fontSize: '24px', fontWeight: 500 }}>Danh sách xe</p>
+                            <div className='tax'>
+
+
+                                <Tabs
+                                    defaultActiveKey="profile"
+                                    id="fill-tab-example"
+                                    className="mb-3"
+                                    variant="underline"
+                                >
+                                    <Tab eventKey="home" title="Có tài xế">
+                                    </Tab>
+                                    <Tab eventKey="profile" title="Tự lái">
+                                    </Tab>
+                                </Tabs>
+
+                            </div>
+
+                        </div>
+                        <img src='https://www.mioto.vn/static/media/empty-mycar.e023e681.svg' height={370} width={370} />
+                        <p style={{ fontSize: '24px', color: 'gray', fontWeight: 500, marginLeft: '350px' }}>Không tìm thấy xe nào.</p>
+                    </div>
+                </>
+            )}
+        </div>
+
     )
 }
 export default Infor;

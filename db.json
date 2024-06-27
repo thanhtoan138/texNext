@@ -268,77 +268,21 @@
   "users": [
     {
       "id": "u1",
-      "username": "tran van a",
+      "username": "Tran Van A",
       "password": 123456,
-      "email": "a@gmail.com",
+      "email": "",
       "phone": "0912312321",
       "bonse": "23/10/1998",
       "role": true,
       "code": ""
     },
     {
-      "id": "c5da",
-      "username": "e1",
-      "phone": "091231232111",
+      "id": "9990",
+      "username": "Nguyen Van B",
+      "phone": "0393939393",
       "password": "123",
-      "code": "123",
-      "role": false
-    },
-    {
-      "id": "e210",
-      "username": "de3",
-      "phone": "231231",
-      "password": "123",
+      "bonse": "03/10/2001",
       "code": "",
-      "role": false
-    },
-    {
-      "id": "d03e",
-      "username": "aaaa",
-      "phone": "091231232111",
-      "password": "123",
-      "code": "",
-      "role": false
-    },
-    {
-      "id": "a1ce",
-      "username": "123",
-      "phone": "21313",
-      "password": "123",
-      "code": "",
-      "role": false
-    },
-    {
-      "id": "37c6",
-      "username": "e",
-      "phone": "12321213",
-      "password": "123",
-      "code": "123213",
-      "role": false
-    },
-    {
-      "id": "bb07",
-      "username": "e",
-      "phone": "12321213",
-      "password": "123",
-      "code": "123213",
-      "role": false
-    },
-    {
-      "id": "b60c",
-      "username": "wqe",
-      "phone": "0912312321123",
-      "password": "123",
-      "code": "123",
-      "confirm": "123",
-      "role": false
-    },
-    {
-      "id": "a48e",
-      "username": "e",
-      "phone": "0912312321213131",
-      "password": "123",
-      "code": "3",
       "confirm": "123",
       "role": false
     }
