@@ -37,7 +37,7 @@ const ListCar = () => {
                                 <Card.Body>
                                     <Card.Subtitle className="mb-2 text-muted ">
                                         <Link href={`product/${l.id}`}>
-                                            <img src={l.image} width={282} height={210} style={{ position: 'relative', right: '10px' }} />
+                                            <img src={l.image} width={287} height={210} style={{ position: 'relative', right: '5px' }} />
                                         </Link>
                                         <div className="fast">
                                             <p>Đặt xe nhanh</p>

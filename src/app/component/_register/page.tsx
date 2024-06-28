@@ -2,9 +2,9 @@
 import React, { useState } from 'react'
 import { Form, FormGroup } from 'react-bootstrap';
 // import { createUser } from '../_register/action';
-import { toast } from 'react-toastify';
+// import { toast } from 'react-toastify';
 import { FormEvent } from 'react';
-import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/navigation';
 export default function Register() {
     // const router = useRouter();
 
@@ -38,18 +38,12 @@ export default function Register() {
                 } else {
                     // toast.info("Đăng ký thành công !");
                     alert('Đăng ký thành công')
-
-
                 }
             }
         } catch (error) {
             console.log(error)
         }
-
-
     }
-
-
     return (
         <div className='form2' style={{ marginTop: '-20px' }}>
             <h4 style={{ textAlign: 'center' }}>Đăng ký</h4>

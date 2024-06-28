@@ -18,8 +18,6 @@ const Infor = () => {
         const value = !!u ? JSON.parse(u) : undefined;
         setUsers(value);
     }, [])
-
-
     return (
 
         <div className="account">
@@ -34,7 +32,7 @@ const Infor = () => {
                                     <i className="bi bi-pencil"></i>
                                 </div>
                                 <img src='https://n1-cstg.mioto.vn/m/avatars/avatar-1.png' alt='' width={170} />
-                                <p style={{ fontWeight: 600, marginLeft: '45px' }}>{user.username}</p>
+                                <p style={{ fontWeight: 600, marginLeft: '35px' }}>{user.username}</p>
                                 <p style={{ fontSize: '13px', marginLeft: '15px' }}>Tham gia: 13/06/2024</p>
                                 <div className='marks'>
                                     <Image src="/img/medal.png" width={25} height={25} alt='' />
@@ -86,7 +84,7 @@ const Infor = () => {
                                             <Col md={1}></Col>
                                             <Col md={1}></Col>
                                             <Col md={4} style={{ fontWeight: 500 }}>
-                                                <p style={{ marginLeft: '26px' }}>{user.phone} <i className="bi bi-pencil"></i></p>
+                                                <p style={{ marginLeft: '13px' }}>{user.phone} <i className="bi bi-pencil"></i></p>
                                                 <p style={{ marginLeft: '120px' }}>{user.email}<i className="bi bi-pencil"></i></p>
                                                 <p>&nbsp;&nbsp;&nbsp;Thêm liên kết <i className="bi bi-link-45deg"></i></p>
                                                 <p>&nbsp;&nbsp;&nbsp;Thêm liên kết <i className="bi bi-link-45deg"></i></p>

@@ -452,7 +452,7 @@ const Product = ({ params }: { params: { id: number } }) => {
                                                 <Card style={{ width: '21rem', height: '28rem' }}>
                                                     <Card.Body>
                                                         <Card.Subtitle className="mb-2 text-muted ">
-                                                            <img src='https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_t…2022/p/g/2024/01/20/13/4pvGdgRfdXG6EuykmRQ85w.jpg' width={290} height={240} />
+                                                            <img src='https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_t…2022/p/g/2024/01/20/13/4pvGdgRfdXG6EuykmRQ85w.jpg' width={300} height={250} />
                                                             <div className="fast">
                                                                 <p>Đặt xe nhanh</p>
                                                                 <Image src='/img/storm.png' width={20} height={17} alt="" style={{ marginLeft: '5px' }} />
@@ -493,7 +493,7 @@ const Product = ({ params }: { params: { id: number } }) => {
                                                 <Card style={{ width: '21rem', height: '28rem' }}>
                                                     <Card.Body>
                                                         <Card.Subtitle className="mb-2 text-muted ">
-                                                            <img src='	https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_t…2021/p/g/2024/04/15/15/yJaEBC_wEiKG0dMtSqM0wg.jpg' width={290} height={240} />
+                                                            <img src='	https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_t…2021/p/g/2024/04/15/15/yJaEBC_wEiKG0dMtSqM0wg.jpg' width={300} height={250} />
                                                             <div className="fast">
                                                                 <p>Đặt xe nhanh</p>
                                                                 <Image src='/img/storm.png' width={20} height={17} alt="" style={{ marginLeft: '5px' }} />
@@ -534,7 +534,7 @@ const Product = ({ params }: { params: { id: number } }) => {
                                                 <Card style={{ width: '21rem', height: '28rem' }}>
                                                     <Card.Body>
                                                         <Card.Subtitle className="mb-2 text-muted ">
-                                                            <img src='	https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_t…2013/p/g/2024/00/02/10/aCOk6958ZDKil-pcV-W7gQ.jpg' width={290} height={240} />
+                                                            <img src='	https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_t…2013/p/g/2024/00/02/10/aCOk6958ZDKil-pcV-W7gQ.jpg' width={300} height={250} />
                                                             <div className="fast">
                                                                 <p>Đặt xe nhanh</p>
                                                                 <Image src='/img/storm.png' width={20} height={17} alt="" style={{ marginLeft: '5px' }} />
@@ -575,7 +575,7 @@ const Product = ({ params }: { params: { id: number } }) => {
                                                 <Card style={{ width: '21rem', height: '28rem' }}>
                                                     <Card.Body>
                                                         <Card.Subtitle className="mb-2 text-muted ">
-                                                            <img src='	https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_t…2023/p/g/2023/10/15/20/-r6KjPeT-tYrGny7VLqdig.jpg' width={290} height={240} />
+                                                            <img src='	https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_t…2023/p/g/2023/10/15/20/-r6KjPeT-tYrGny7VLqdig.jpg' width={300} height={250} />
                                                             <div className="fast">
                                                                 <p>Đặt xe nhanh</p>
                                                                 <Image src='/img/storm.png' width={20} height={17} alt="" style={{ marginLeft: '5px' }} />
@@ -616,7 +616,7 @@ const Product = ({ params }: { params: { id: number } }) => {
                                                 <Card style={{ width: '21rem', height: '28rem' }}>
                                                     <Card.Body>
                                                         <Card.Subtitle className="mb-2 text-muted ">
-                                                            <img src='https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_t…2018/p/g/2022/01/18/10/40JtODZfo8Id1CIh6buKkw.jpg' width={290} height={240} />
+                                                            <img src='https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_t…2018/p/g/2022/01/18/10/40JtODZfo8Id1CIh6buKkw.jpg' width={300} height={250} />
                                                             <div className="fast">
                                                                 <p>Đặt xe nhanh</p>
                                                                 <Image src='/img/storm.png' width={20} height={17} alt="" style={{ marginLeft: '5px' }} />
@@ -657,7 +657,7 @@ const Product = ({ params }: { params: { id: number } }) => {
                                                 <Card style={{ width: '21rem', height: '28rem' }}>
                                                     <Card.Body>
                                                         <Card.Subtitle className="mb-2 text-muted ">
-                                                            <img src='https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_t…2022/p/g/2024/01/20/13/4pvGdgRfdXG6EuykmRQ85w.jpg' width={290} height={240} />
+                                                            <img src='https://n1-pstg.mioto.vn/cho_thue_xe_o_to_tu_lai_t…2022/p/g/2024/01/20/13/4pvGdgRfdXG6EuykmRQ85w.jpg' width={300} height={250} />
                                                             <div className="fast">
                                                                 <p>Đặt xe nhanh</p>
                                                                 <Image src='/img/storm.png' width={20} height={17} alt="" style={{ marginLeft: '5px' }} />

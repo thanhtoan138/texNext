@@ -242,7 +242,7 @@ const MainChild1 = () => {
                                             </Row>
                                             {/* href={`/product/${item.id}`} */}
                                             <Link href={`/product/${item.id}`} style={{ textDecoration: "none", color: 'black' }}>
-                                                <p style={{ fontSize: '22px', fontWeight: '600', marginTop: '-110px', textAlign: 'center' }}>
+                                                <p style={{ fontSize: '22px', fontWeight: '600', marginTop: '-100px', textAlign: 'center' }}>
                                                     {item.name}
                                                 </p>
                                             </Link>
@@ -252,6 +252,7 @@ const MainChild1 = () => {
                                             <div className='foot'>
                                                 <i className="bi bi-star-fill" style={{ display: 'inline-block', color: 'orange' }}></i> 5.0&nbsp;&nbsp;
                                                 <i className="bi bi-suitcase-fill" style={{ display: 'inline-block', color: '#5fcf86' }}></i>39 chuyến
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                 <del style={{ marginLeft: '10px', fontWeight: '500', color: 'gray' }}>{item.price}k</del>
                                                 <span style={{ color: '#5fcf86', fontWeight: '500', fontSize: '18px', marginLeft: '5px' }}>{item.price - (item.price * item.discount)}K</span>/ngày
                                             </div>

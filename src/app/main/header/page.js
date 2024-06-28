@@ -10,56 +10,78 @@ import Register from '../../component/_register/page';
 // import SignIn from '../../component/_signin/page.tsx';
 import { useRouter, redirect } from "next/navigation"
 import { toast } from 'react-toastify';
-
+// import { useSWRConfig } from "swr"
+import useSWR from 'swr'
+// import { mutate } from "swr"
 const Header = () => {
     const router = useRouter()
-    const [phone, setPhone] = useState('');
-    const [password, setPassword] = useState('');
+    const [phone, setPhone] = useState(null);
+    const [password, setPassword] = useState(null);
     const [show, setShow] = useState(false);
     const [showRegister, setShowRegister] = useState(false);
     const handleClose = () => setShow(false);
     const handleCloseRegister = () => setShowRegister(false);
     const handleShow = () => setShow(true);
     const handleShowRegister = () => setShowRegister(true);
-    const [account, setAccount] = useState('');
-    const [user, setUser] = useState(null);
-    useEffect(() => {
-        const u = localStorage.getItem('user');
-        const value = !!u ? JSON.parse(u) : undefined;
-        return setUser(value);
-    }, [user])
+    const [users, setUsers] = useState(undefined);
+    // const { mutate } = useSWRConfig()
+    const { data } = useUser();
+
+    // useEffect(() => {
+    //     const u = localStorage.getItem('user');
+    //     const value = !!u ? u : undefined;
+    //     setUsers(value);
+    //     console.log(value);
+    //     // console.log(JSON.stringify(value));
+
+    // }, []);
     const handleLogout = () => {
         const x = localStorage.removeItem('user');
-        setUser(x);
+        setUsers(x);
         return router.push('/main-child1')
     }
- 
-    async function handleLogin(e) {
 
+    function useUser() {
+        const fetcher = (...args) => fetch(...args).then(res => res.json());
+        return useSWR('http://localhost:8000/users', fetcher);
+    }
+    const handleLogin = (e) => {
         e.preventDefault();
         try {
-
-            const response = await fetch('http://localhost:8000/users');
-            const data = await response.json();
-            // Handle response if necessary
-
-            data?.map((u) => {
-                if (+u.phone === +phone && +u.password === +password) {
-                    setAccount(JSON.stringify(u))
-                }
-
-            });
-            if (account) {
-                toast.success('Đăng nhập thành công!');
-                localStorage.setItem('user', account);
-                setShow(false);
-                return router.push('/my-car');
-
-
-            } else {
+            const account = data.find((item) => item.phone === phone && item.password === password);
+            if (!account) {
                 toast.error('Sai tên đăng nhập hoặc mật khẩu!');
-
+            } else {
+                toast.success('Đăng nhập thành công!');
+                localStorage.setItem('user', JSON.stringify(account));
+                setUsers(account);
+                setShow(false);
+                return router.push('/infor');
             }
+
+            // const response = await fetch('http://localhost:8000/users');
+            // const data = await response.json();
+            // Handle response if necessary
+            // console.log(JSON.stringify(data))
+
+            // if (data.users.phone === +phone && data.users.password === +password) {
+            //     alert('ok')
+            // } else {
+            //     alert('fas')
+            // }
+
+
+            // if (account) {
+            //     toast.success('Đăng nhập thành công!');
+            //     localStorage.setItem('user', account);
+            //     setShow(false);
+            //     return router.push('/my-car');
+
+
+            // } else {
+            //     toast.error('Sai tên đăng nhập hoặc mật khẩu!');
+
+            // }
 
         } catch (error) {
             // Handle error if necessary
@@ -89,7 +111,7 @@ const Header = () => {
                         </Navbar.Text>
 
 
-                        {!user && (
+                        {!users && (
                             <>
                                 <Navbar.Text className='ntext'>
                                     <a onClick={handleShowRegister}>Đăng ký</a>
@@ -99,10 +121,10 @@ const Header = () => {
                                 </Navbar.Text>
                             </>
                         )}
-                        {user && (
+                        {users && (
                             <>
                                 <Navbar.Text className='ntext'>
-                                    <Link href='/infor' style={{ textDecoration: 'none', color: '#5fcf86' }}>{user.username}</Link>
+                                    <Link href='/infor' style={{ textDecoration: 'none', color: '#5fcf86' }}>{users.username}</Link>
                                 </Navbar.Text>
                                 <Navbar.Text className='ntext'>
                                     <a className='dn btn' onClick={handleLogout}>Đăng Xuất</a>
@@ -110,18 +132,9 @@ const Header = () => {
 
                             </>
                         )}
-
-
-
-
-
-
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-
-
-
             <Modal
                 show={show}
                 onHide={handleClose}
@@ -138,7 +151,7 @@ const Header = () => {
 
                 <Modal.Body>
                     <div className='login'>
-                        <Form onSubmit={handleLogin} className='form'>
+                        <Form className='form'>
                             <h4 className='title'>Đăng nhập</h4>
                             <Form.Group className="mb-3" >
                                 <Form.Label htmlFor="sdt">Số điện thoại hoặc email</Form.Label>
@@ -160,7 +173,7 @@ const Header = () => {
                             </Form.Group>
                             <i className="bi bi-eye-slash" style={{ position: 'relative', bottom: '45px', left: '437px' }}></i>
                             <p style={{ marginLeft: '330px', color: 'rgb(95, 207, 134)' }}>Quên mật khẩu?</p>
-                            <button className='dn' type='submit'>Đăng nhập</button>
+                            <button className='dn' onClick={handleLogin}>Đăng nhập</button>
                             <p style={{ textAlign: 'center', paddingTop: '10px' }}>Bạn chưa là thành viên? <span style={{ color: 'rgb(95, 207, 134)', fontWeight: "500" }}>Đăng ký ngay</span></p>
                             <div className='equal'>
                                 <a className='fb btn'><img src='https://nhanhtravel.com/wp-content/uploads/2022/12/TS-FB-Icon1-e1670787566310.png' width={18} /> Facebook</a>
