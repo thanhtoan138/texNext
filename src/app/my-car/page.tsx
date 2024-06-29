@@ -3,108 +3,71 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Collapse from 'react-bootstrap/Collapse';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, AccordionHeader } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import Fade from 'react-bootstrap/Fade';
+import Accordion from 'react-bootstrap/Accordion';
+
+
 const MyCar = () => {
+    const [show, setShow] = useState(false);
+    function Close() {
+        setShow(false)
+    }
+    function Open() {
+        setShow(true)
 
-
+    }
     return (
         <>
-            <div class="sidebar" role="cdb-sidebar" color="white">
-                <div class="sidebar-container">
-                    <div class="sidebar-header">
-                        <a class="sidebar-brand">Contrast Light</a>
-                        <a class="sidebar-toggler"><i class="fa fa-bars"></i></a>
-                    </div>
-                    <div class="sidebar-nav">
-                        <div class="sidenav">
-                            <a class="sidebar-item">
-                                <div class="sidebar-item-content">
-                                    <i class="fa fa-th-large sidebar-icon sidebar-icon-lg"></i>
-                                    <span>Dashboard</span>
-                                    <div class="suffix">
-                                        <div class="badge rounded-pill bg-danger">new</div>
+            <div className="container">
+                <div className="row flex-nowrap">
+                    <div className="col-auto px-0">
+
+
+
+                        <div id="sidebar" className="collapse collapse-horizontal show border-end" >
+
+                            <div id="sidebar-nav" className="list-group border-0 rounded-0 text-sm-start min-vh-100">
+                                {show === false && (
+                                    <div onClick={() => setShow(true)} style={{ minWidth: '200px', outline: 'none' }}>
+                                        <a href="#" data-bs-target="#sidebar" data-bs-toggle="collapse" className="borders rounded-3 p-1 text-decoration-none"><i className="bi bi-list bi-lg py-2 p-1"></i> Menu</a>
                                     </div>
-                                </div>
-                            </a>
-                            <a class="sidebar-item">
-                                <div class="sidebar-item-content">
-                                    <i class="fa fa-sticky-note sidebar-icon"></i>
-                                    <span>Components</span>
-                                </div>
-                            </a>
-                            <a class="sidebar-item">
-                                <div class="sidebar-item-content">
-                                    <i class="fa fa-sticky-note sidebar-icon"></i>
-                                    <span>Bootstrap</span>
-                                </div>
-                            </a>
+                                )}
+                                <a style={{ display: 'flex' }} href="#" className="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i className="bi bi-bootstrap"></i> <span>Item</span> </a>
+                                <a href="#" className="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i className="bi bi-film"></i> <span>Item</span></a>
+                                <a href="#" className="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i className="bi bi-heart"></i> <span>Item</span></a>
+                                <a href="#" className="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i className="bi bi-bricks"></i> <span>Item</span></a>
+                                <a href="#" className="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i className="bi bi-clock"></i> <span>Item</span></a>
+                                <a href="#" className="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i className="bi bi-archive"></i> <span>Item</span></a>
+                                <a href="#" className="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i className="bi bi-gear"></i> <span>Item</span></a>
+                                <a href="#" className="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i className="bi bi-calendar"></i> <span>Item</span></a>
+                                <a href="#" className="list-group-item border-end-0 d-inline-block text-truncate" data-bs-parent="#sidebar"><i className="bi bi-envelope"></i> <span>Item</span></a>
+                            </div>
                         </div>
-                        <div class="sidebar-footer">Sidebar Footer</div>
                     </div>
+                    <main className="col ps-md-2 pt-2">
+                        <div className="page-header pt-3">
+                            {show === true && (
+                                <div onClick={() => setShow(false)} >
+                                    <a href="#" data-bs-target="#sidebar" data-bs-toggle="collapse" className="border rounded-3 p-1 text-decoration-none"><i className="bi bi-list bi-lg py-2 p-1"></i> ok</a>
+                                </div>
+                            )}
+                            <h2>Bootstrap 5 Sidebar Menu - Simple</h2>
+                        </div>
+                        <p className="lead">A offcanvas "push" vertical nav menu example.</p>
+                        <hr />
+                        <div className="row">
+                            <div className="col-12">
+                                <p>This is a simple collapsing sidebar menu for Bootstrap 5. Unlike the Offcanvas component that overlays the content, this sidebar will "push" the content. Sriracha biodiesel taxidermy organic post-ironic, Intelligentsia salvia mustache 90's code editing brunch. Butcher polaroid VHS art party, hashtag Brooklyn deep v PBR narwhal sustainable mixtape swag wolf squid tote bag. Tote bag cronut semiotics, raw denim deep v taxidermy messenger bag. Tofu YOLO Etsy, direct trade ethical Odd Future jean shorts paleo. Forage Shoreditch tousled aesthetic irony, street art organic Bushwick artisan cliche semiotics ugh synth chillwave meditation. Shabby chic lomo plaid vinyl chambray Vice. Vice sustainable cardigan, Williamsburg master cleanse hella DIY 90's blog.</p>
+                                <p>Ethical Kickstarter PBR asymmetrical lo-fi. Dreamcatcher street art Carles, stumptown gluten-free Kickstarter artisan Wes Anderson wolf pug. Godard sustainable you probably haven't heard of them, vegan farm-to-table Williamsburg slow-carb readymade disrupt deep v. Meggings seitan Wes Anderson semiotics, cliche American Apparel whatever. Helvetica cray plaid, vegan brunch Banksy leggings +1 direct trade. Wayfarers codeply PBR selfies. Banh mi McSweeney's Shoreditch selfies, forage fingerstache food truck occupy YOLO Pitchfork fixie iPhone fanny pack art party Portland.</p>
+                            </div>
+                        </div>
+                    </main>
                 </div>
             </div>
         </>
-        // <div className="container" style={{ height: '500px' }}>
-        //     {/* <Row>
-        //         <Col lg={5}>
-        //             <Row>
-        //                 <Col md={7}>
-        //                     <div className='' style={{ display: 'grid', gridTemplateColumns: 'auto auto' }}>
-
-        //                         <div id="ex">
-        //                             <h1>asdasddas</h1>
-        //                         </div>
-
-        //                         <div>
-        //                             <a id='btnpre'
-        //                                 onClick={() => opPre()}
-        //                                 aria-controls="example-collapse-text"
-
-        //                             >
-        //                                 'preV'
-        //                             </a>
-        //                         </div>
-        //                         <div>
-        //                             <a id='btnnext'
-        //                                 onClick={() => opNext()}
-        //                                 aria-controls="example-collapse-text"
-
-        //                             >
-        //                                 'Next'
-        //                             </a>
-        //                         </div>
-        //                     </div>
-        //                     {/* <ListGroup style={{ width: '200px' }}>
-        //                         <ListGroup.Item>Cras justo odio</ListGroup.Item>
-        //                         <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-        //                         <ListGroup.Item>Morbi leo risus</ListGroup.Item>
-        //                         <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
-        //                         <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-        //                     </ListGroup> */}
-        //                 </Col>
-        //                 <Col md={5}>
-        //                     {/* <Fade in={open}>
-        //                         <div id="example-fade-text">
-        //                             Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-        //                             terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
-        //                             labore wes anderson cred nesciunt sapiente ea proident.
-        //                         </div>
-        //                     </Fade> */}
-        //                 </Col>
-        //             </Row>
-
-        //         </Col>
-        //         <Col lg={7}>
-
-
-        //         </Col>
-        //     </Row > */}
-
-
-
-        // </div >
     )
 }
+
 export default MyCar
