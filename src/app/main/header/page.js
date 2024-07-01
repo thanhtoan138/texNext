@@ -124,9 +124,21 @@ const Header = () => {
                         {users && (
                             <>
                                 <Navbar.Text className='ntext'>
+                                    <i className="bi bi-bell-fill"></i>
+                                </Navbar.Text>
+                                <Navbar.Text className='ntext'>
+                                    <Link href='/'>
+                                        <img src='https://n1-cstg.mioto.vn/m/avatars/avatar-1.png' alt='' width={35} height={35} />
+                                    </Link>
+                                </Navbar.Text>
+                                <Navbar.Text className='ntext'>
                                     <Link href='/infor' style={{ textDecoration: 'none', color: '#5fcf86' }}>{users.username}</Link>
                                 </Navbar.Text>
                                 <Navbar.Text className='ntext'>
+                                    {/* <svg fill="#000000" width="27px" height="27px" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                        <g id="SVGRepo_iconCarrier"><path d="M759.2 419.8L697.4 358 512 543.4 326.6 358l-61.8 61.8L512 667z"></path></g>
+                                    </svg> */}
                                     <a className='dn btn' onClick={handleLogout}>Đăng Xuất</a>
                                 </Navbar.Text>
 
