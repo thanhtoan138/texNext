@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/Container';
 export default function LoginLayout({ children }) {
     return (
         <div style={{ backgroundColor: '#f6f6f6', }}>
-            <Container style={{ paddingTop: '70px' }}>
+            <Container style={{ paddingTop: '71px' }}>
                 <Row>
                     <Col lg={4}>
                         <CategoryLogin />
